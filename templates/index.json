@@ -11,6 +11,19 @@
   "sections": {
     "hero": {
       "type": "hero",
+      "blocks": {
+        "slide_cfjErn": {
+          "type": "slide",
+          "settings": {
+            "label": "Single bottle",
+            "tier_product": "machine-cleaner-powder",
+            "image_1": "shopify://shop_images/ChatGPT_Image_Aug_8_2026_11_41_36_AM.png"
+          }
+        }
+      },
+      "block_order": [
+        "slide_cfjErn"
+      ],
       "settings": {
         "color_scheme": "scheme-3",
         "min_height": 100,
@@ -30,12 +43,96 @@
         "color_scheme": "scheme-3",
         "kicker": "Bestsellers",
         "heading": "Loved by 30,000 homes",
-        "collection": "",
+        "collection": "frontpage",
         "product_count": 8
       }
     },
     "combos": {
       "type": "combos",
+      "blocks": {
+        "combo_gdQVPc": {
+          "type": "combo",
+          "settings": {
+            "title": "Bathroom deep clean",
+            "product": "",
+            "product_count_label": "2 products",
+            "includes": "Includes: Toilet Cleaner, Tap Cleaner & Magic Eraser. A complete bathroom refresh in one box.",
+            "save_label": "",
+            "flag": "",
+            "featured": false,
+            "cta_link": "",
+            "item_1_product": "laundry-detergent",
+            "item_1_caption": "Kills 99.9% germs",
+            "item_2_product": "machine-cleaner-powder",
+            "item_2_caption": "Melts hard water stains",
+            "item_3_product": "",
+            "item_3_caption": ""
+          }
+        },
+        "combo_64JcNQ": {
+          "type": "combo",
+          "settings": {
+            "title": "Complete home bundle",
+            "product": "",
+            "product_count_label": "1 products",
+            "includes": "Includes: Kitchen Cleaner, Laundry Detergent, Floor Cleaner, Toilet Cleaner & Handwash. Our biggest saving box.",
+            "save_label": "",
+            "flag": "",
+            "featured": false,
+            "cta_link": "shopify://collections/complete-home-bundle",
+            "item_1_product": "purelane-plant-based-multi-surface-kitchen-bathroom-glass-ceramic-granite-marble-stainless-steel-cleaner-with-natural-citrus-extract-for-everyday-deep-cleaning-and-long-lasting-fresh-fragrance-1-litre-family-value-refill-pack",
+            "item_1_caption": "Cuts grease instantly+Kills 99.9% germs+Gentle hydration for hands",
+            "item_2_product": "",
+            "item_2_caption": "",
+            "item_3_product": "",
+            "item_3_caption": ""
+          }
+        },
+        "combo_qYPGz6": {
+          "type": "combo",
+          "settings": {
+            "title": "Laundry care bundle",
+            "product": "",
+            "product_count_label": "3 products",
+            "includes": "Includes: Laundry Detergent, Fabric Conditioner & Machine Cleaner Powder. Softer, fresher wash, all in one box.",
+            "save_label": "",
+            "flag": "",
+            "featured": false,
+            "cta_link": "shopify://collections/laundry-care-bundle",
+            "item_1_product": "laundry-detergent",
+            "item_1_caption": "Removes tough stains & odour",
+            "item_2_product": "",
+            "item_2_caption": "Softens & freshens every wash",
+            "item_3_product": "machine-cleaner-powder",
+            "item_3_caption": "Deep-cleans your machine"
+          }
+        },
+        "combo_9rQDR6": {
+          "type": "combo",
+          "settings": {
+            "title": "Kitchen essentials",
+            "product": "",
+            "product_count_label": "3 products",
+            "includes": "Includes: Foaming Kitchen Cleaner, Dishwash Gel & Tap Cleaner. Everything for a sparkling kitchen, no need to pick separately.",
+            "save_label": "",
+            "flag": "",
+            "featured": false,
+            "cta_link": "shopify://collections/kitchen-cleaners",
+            "item_1_product": "laundry-detergent",
+            "item_1_caption": "Cuts grease instantly",
+            "item_2_product": "machine-cleaner-powder",
+            "item_2_caption": "Squeaky clean dishes",
+            "item_3_product": "machine-cleaner-powder",
+            "item_3_caption": "Melts hard water stains"
+          }
+        }
+      },
+      "block_order": [
+        "combo_gdQVPc",
+        "combo_64JcNQ",
+        "combo_qYPGz6",
+        "combo_9rQDR6"
+      ],
       "settings": {
         "color_scheme": "scheme-3",
         "kicker": "Pre-built to save you money",
@@ -46,6 +143,52 @@
     },
     "bundles": {
       "type": "bundles",
+      "blocks": {
+        "tier_4XePgh": {
+          "type": "tier",
+          "settings": {
+            "tag": "Family Pack",
+            "quantity": 5,
+            "product": "purelane-plant-based-multi-surface-kitchen-bathroom-glass-ceramic-granite-marble-stainless-steel-cleaner-with-natural-citrus-extract-for-everyday-deep-cleaning-and-long-lasting-fresh-fragrance-1-litre-family-value-refill-pack",
+            "image_1": "shopify://shop_images/Screenshot_2026-08-08_143708.png",
+            "bullets": "Pick any five products\nEvery room in one order\nFree shipping across India",
+            "featured": false,
+            "cta_label": "Build this box",
+            "cta_link": ""
+          }
+        },
+        "tier_bcNY7p": {
+          "type": "tier",
+          "settings": {
+            "tag": "Most popular",
+            "quantity": 3,
+            "product": "copper-bronze-brass-cleaner-premium-value-pack",
+            "image_1": "shopify://shop_images/ChatGPT_Image_Aug_8_2026_11_41_36_AM.png",
+            "bullets": "Pick any three products\nCovers kitchen and laundry\nFree shipping across India",
+            "featured": false,
+            "cta_label": "Build this box",
+            "cta_link": "shopify://collections/complete-home-bundle"
+          }
+        },
+        "tier_h36XhL": {
+          "type": "tier",
+          "settings": {
+            "tag": "Starter",
+            "quantity": 2,
+            "product": "kitchen-cleaner-foaming",
+            "image_1": "shopify://shop_images/Screenshot_2026-08-08_143205.png",
+            "bullets": "Pick any two products\nFree shipping across India",
+            "featured": false,
+            "cta_label": "Build this box",
+            "cta_link": "shopify://collections/kitchen-cleaners"
+          }
+        }
+      },
+      "block_order": [
+        "tier_4XePgh",
+        "tier_bcNY7p",
+        "tier_h36XhL"
+      ],
       "settings": {
         "color_scheme": "scheme-3",
         "kicker": "Build your bundle",
