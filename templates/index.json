@@ -1,24 +1,68 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "hero",
-      "settings": {}
+      "settings": {
+        "color_scheme": "scheme-3",
+        "min_height": 100,
+        "heading_line_1": "Clean",
+        "heading_line_2": "That",
+        "heading_line_accent": "Lasts",
+        "subtext": "Homecare that works on the toughest grime, made from plants. Kind to your home, your family and the world outside it.",
+        "primary_label": "Shop now",
+        "primary_link": "",
+        "secondary_label": "How it works",
+        "secondary_link": ""
+      }
     },
     "product_grid": {
       "type": "product-grid",
-      "settings": {}
+      "settings": {
+        "color_scheme": "scheme-3",
+        "kicker": "Bestsellers",
+        "heading": "Loved by 30,000 homes",
+        "collection": "",
+        "product_count": 8
+      }
     },
     "combos": {
       "type": "combos",
-      "settings": {}
+      "settings": {
+        "color_scheme": "scheme-3",
+        "kicker": "Pre-built to save you money",
+        "heading": "Best selling combos",
+        "subtext": "Swipe through the boxes people order most. Each one is already priced below buying the same products on their own.",
+        "footnote": "Tapping \"Shop bundle\" opens the bundle picker with these products already added. You can still swap anything before you pay."
+      }
     },
     "bundles": {
       "type": "bundles",
-      "settings": {}
+      "settings": {
+        "color_scheme": "scheme-3",
+        "kicker": "Build your bundle",
+        "heading": "One box. Every room.",
+        "subtext": "Mix and match across kitchen, laundry, home and skin. One flat price, no code needed, free shipping either way."
+      }
     },
     "reviews": {
       "type": "reviews-rail",
-      "settings": {}
+      "settings": {
+        "color_scheme": "scheme-3",
+        "kicker": "That's what they said",
+        "rating_value": "4.8",
+        "rating_count_label": "8,000+ reviews",
+        "homes_label": "Loved by 12 lakh+ homes",
+        "speed": 50
+      }
     }
   },
   "order": [
