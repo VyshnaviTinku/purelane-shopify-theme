@@ -1,0 +1,175 @@
+{{ 'purelane-shared.css' | asset_url | stylesheet_tag }}
+{{ 'section-hero.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign badges = section.blocks | where: 'type', 'badge'
+  assign slides = section.blocks | where: 'type', 'slide'
+-%}
+
+<section
+  class="pl-hero color-{{ section.settings.color_scheme }}"
+  data-section-id="{{ section.id }}"
+  style="--hero-min-height: {{ section.settings.min_height }}svh;"
+>
+  <div class="pl-hero__scene" aria-hidden="true"></div>
+
+  <div class="pl-wrap pl-hero__grid">
+
+    {%- if badges.size > 0 -%}
+      <div class="pl-hero__badges pl-glass-2" aria-label="Product promises">
+        {%- for block in badges -%}
+          <div class="pl-badge" {{ block.shopify_attributes }}>
+            <span class="pl-badge__icon">{%- render 'pl-icon', icon: block.settings.icon -%}</span>
+            <span>{{ block.settings.label }}</span>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    <div class="pl-hero__copy">
+      <h1 class="pl-d1 pl-rv pl-in">
+        {{ section.settings.heading_line_1 }}<br>
+        {{ section.settings.heading_line_2 }}<br>
+        <span class="pl-lime">{{ section.settings.heading_line_accent }}</span>
+      </h1>
+
+      <div class="pl-rule pl-rv pl-rv-d1">
+        <i></i>
+        {%- render 'pl-icon', icon: 'leaf' -%}
+        <i></i>
+      </div>
+
+      {%- if section.settings.subtext != blank -%}
+        <p class="pl-lede pl-rv pl-rv-d2">{{ section.settings.subtext }}</p>
+      {%- endif -%}
+
+      <div class="pl-hero__cta pl-rv pl-rv-d3">
+        {%- if section.settings.primary_label != blank -%}
+          <a class="pl-btn pl-btn-primary" href="{{ section.settings.primary_link | default: '#' }}">
+            {{ section.settings.primary_label }}
+            {%- render 'pl-icon', icon: 'arrow-right' -%}
+          </a>
+        {%- endif -%}
+        {%- if section.settings.secondary_label != blank -%}
+          <a class="pl-btn pl-btn-ghost" href="{{ section.settings.secondary_link | default: '#' }}">{{ section.settings.secondary_label }}</a>
+        {%- endif -%}
+      </div>
+
+      {%- if badges.size > 0 -%}
+        <div class="pl-hero__badgestrip pl-rv pl-rv-d4">
+          {%- for block in badges -%}
+            <div class="pl-glass-2" {{ block.shopify_attributes }}>
+              {%- render 'pl-icon', icon: block.settings.icon -%}
+              {{ block.settings.label }}
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- if slides.size > 0 -%}
+      <div class="pl-hero__stage-wrap" id="hero-stage-{{ section.id }}">
+        <div class="pl-hstage" data-hero-stage>
+          {%- for block in slides -%}
+            {%- liquid
+              assign p = block.settings.tier_product
+              assign save_amount = p.compare_at_price | minus: p.price
+            -%}
+            <div class="pl-hslide{% if forloop.first %} pl-on{% endif %}" data-hero-slide {{ block.shopify_attributes }}>
+              {%- if block.settings.image_1 -%}
+                <img class="pl-hp pl-d1" src="{{ block.settings.image_1 | image_url: width: 500 }}" width="500" height="{{ block.settings.image_1.height | times: 500 | divided_by: block.settings.image_1.width }}" alt="{{ block.settings.image_1.alt | default: block.settings.label }}" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
+              {%- endif -%}
+              {%- if block.settings.image_2 -%}
+                <img class="pl-hp pl-d2" src="{{ block.settings.image_2 | image_url: width: 380 }}" width="380" height="{{ block.settings.image_2.height | times: 380 | divided_by: block.settings.image_2.width }}" alt="{{ block.settings.image_2.alt | default: '' }}" loading="lazy">
+              {%- endif -%}
+              {%- if block.settings.image_3 -%}
+                <img class="pl-hp pl-d3" src="{{ block.settings.image_3 | image_url: width: 300 }}" width="300" height="{{ block.settings.image_3.height | times: 300 | divided_by: block.settings.image_3.width }}" alt="{{ block.settings.image_3.alt | default: '' }}" loading="lazy">
+              {%- endif -%}
+
+              {%- if p != blank -%}
+                <div class="pl-glass-2 pl-ptag">
+                  <span class="pl-ptag__lbl">{{ block.settings.label }}</span>
+                  <span class="pl-ptag__val">
+                    <strong>{{ p.price | money }}</strong>
+                    {%- if p.compare_at_price > p.price -%}<s>{{ p.compare_at_price | money }}</s>{%- endif -%}
+                  </span>
+                  {%- if save_amount > 0 -%}
+                    <span class="pl-ptag__cut">Save {{ save_amount | money }}</span>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+        </div>
+
+        {%- if slides.size > 1 -%}
+          <div class="pl-hdots" role="tablist" aria-label="Featured bundle previews">
+            {%- for block in slides -%}
+              <button type="button" role="tab" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}" aria-label="Show {{ block.settings.label | default: 'slide' }}" class="{% if forloop.first %}pl-on{% endif %}"></button>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+  </div>
+</section>
+
+<script src="{{ 'section-hero.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "Hero",
+  "tag": "section",
+  "class": "section-hero",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
+    { "type": "range", "id": "min_height", "label": "Minimum height (% of viewport)", "min": 60, "max": 100, "step": 5, "unit": "%", "default": 100 },
+    { "type": "text", "id": "heading_line_1", "label": "Heading — line 1", "default": "Clean" },
+    { "type": "text", "id": "heading_line_2", "label": "Heading — line 2", "default": "That" },
+    { "type": "text", "id": "heading_line_accent", "label": "Heading — accent line", "default": "Lasts" },
+    { "type": "textarea", "id": "subtext", "label": "Supporting text", "default": "Homecare that works on the toughest grime, made from plants. Kind to your home, your family and the world outside it." },
+    { "type": "text", "id": "primary_label", "label": "Primary button label", "default": "Shop now" },
+    { "type": "url", "id": "primary_link", "label": "Primary button link" },
+    { "type": "text", "id": "secondary_label", "label": "Secondary button label", "default": "How it works" },
+    { "type": "url", "id": "secondary_link", "label": "Secondary button link" }
+  ],
+  "blocks": [
+    {
+      "type": "badge",
+      "name": "Promise badge",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icon", "default": "leaf", "options": [
+          { "value": "leaf", "label": "Leaf" },
+          { "value": "shield-check", "label": "Shield check" },
+          { "value": "no-chemical", "label": "No chemical" }
+        ]},
+        { "type": "text", "id": "label", "label": "Label", "default": "Plant powered" }
+      ]
+    },
+    {
+      "type": "slide",
+      "name": "Bundle preview slide",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Single bottle" },
+        { "type": "product", "id": "tier_product", "label": "Product or bundle used for live price", "info": "Price and compare-at price shown on the slide come from this product." },
+        { "type": "image_picker", "id": "image_1", "label": "Image 1 (front)" },
+        { "type": "image_picker", "id": "image_2", "label": "Image 2 (optional)" },
+        { "type": "image_picker", "id": "image_3", "label": "Image 3 (optional)" }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Hero",
+      "blocks": [
+        { "type": "badge", "settings": { "icon": "leaf", "label": "Plant powered" } },
+        { "type": "badge", "settings": { "icon": "shield-check", "label": "Safe for kids & pets" } },
+        { "type": "badge", "settings": { "icon": "no-chemical", "label": "Zero harsh chemicals" } },
+        { "type": "slide", "settings": { "label": "Single bottle" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

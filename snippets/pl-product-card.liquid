@@ -1,0 +1,93 @@
+{%- comment -%}
+  Reusable product card. Powers the Shop grid, and is built so the
+  Combos/Bundles sections can pull the same markup for their own
+  product previews (brief calls out several sections render similar
+  cards — this is the single source of truth for that card).
+
+  Accepts:
+    product          – product object (required)
+    card_badge_tags  – comma-separated string of tag→label pairs from
+                        section settings, e.g. "best-seller:Best seller,new:New"
+    show_add_to_cart – boolean, default true
+{%- endcomment -%}
+
+{%- liquid
+  assign show_atc = show_add_to_cart | default: true
+  assign badge_label = ''
+  if card_badge_tags != blank
+    assign pairs = card_badge_tags | split: ','
+    for pair in pairs
+      assign kv = pair | split: ':'
+      assign tag_key = kv[0] | strip
+      if product.tags contains tag_key
+        assign badge_label = kv[1] | strip
+        break
+      endif
+    endfor
+  endif
+
+  assign rating = product.metafields.reviews.rating.value
+  assign rating_count = product.metafields.reviews.rating_count.value
+-%}
+
+<article class="pl-glass pl-card pl-rv{% if card_index %} pl-rv-d{{ card_index }}{% endif %}">
+  <a href="{{ product.url | default: '#' }}" class="pl-card__media-link" {% unless product.url %}tabindex="-1" aria-hidden="true"{% endunless %}>
+    <div class="pl-card__shot">
+      {%- if badge_label != blank -%}
+        <span class="pl-card__pill">{{ badge_label }}</span>
+      {%- endif -%}
+      {%- unless product.available -%}
+        <span class="pl-card__pill pl-card__pill--sold-out">Sold out</span>
+      {%- endunless -%}
+
+      {%- if product.featured_media -%}
+        {{ product.featured_media | image_url: width: 400 | image_tag:
+          loading: 'lazy',
+          widths: '200,300,400,600',
+          sizes: '(min-width: 860px) 25vw, 45vw',
+          alt: product.featured_media.alt | default: product.title,
+          class: 'pl-card__img'
+        }}
+      {%- else -%}
+        {{ 'product-1' | placeholder_svg_tag: 'pl-card__img pl-card__img--placeholder' }}
+      {%- endif -%}
+    </div>
+  </a>
+
+  <h4 class="pl-card__title">
+    <a href="{{ product.url | default: '#' }}">{{ product.title | default: 'Product title' }}</a>
+  </h4>
+
+  {%- if rating -%}
+    <div class="pl-card__rate">
+      {%- render 'pl-stars', rating: rating -%}
+      <span class="pl-card__rate-num">{{ rating }}</span>
+      {%- if rating_count -%}<span>· {{ rating_count }} reviews</span>{%- endif -%}
+    </div>
+  {%- endif -%}
+
+  <div class="pl-card__price">
+    {%- if product.price_varies -%}
+      <strong>{{ product.price_min | money }}+</strong>
+    {%- else -%}
+      <strong>{{ product.price | money }}</strong>
+    {%- endif -%}
+    {%- if product.compare_at_price > product.price -%}
+      <s>{{ product.compare_at_price | money }}</s>
+      <em>{{ product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round }}% off</em>
+    {%- endif -%}
+  </div>
+
+  {%- if show_atc -%}
+    {%- if product.available -%}
+      {%- form 'product', product, class: 'pl-card__form' -%}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        <button type="submit" class="pl-btn pl-btn-ghost pl-btn-sm pl-card__atc" {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}>
+          Add to cart
+        </button>
+      {%- endform -%}
+    {%- else -%}
+      <button type="button" class="pl-btn pl-btn-ghost pl-btn-sm" disabled>Sold out</button>
+    {%- endif -%}
+  {%- endif -%}
+</article>
