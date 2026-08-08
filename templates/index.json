@@ -16,7 +16,7 @@
           "type": "slide",
           "settings": {
             "label": "Single bottle",
-            "tier_product": "machine-cleaner-powder",
+            "tier_product": "laundry-detergent",
             "image_1": "shopify://shop_images/ChatGPT_Image_Aug_8_2026_11_41_36_AM.png"
           }
         }
@@ -198,6 +198,43 @@
     },
     "reviews": {
       "type": "reviews-rail",
+      "blocks": {
+        "review_Wwwerq": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Dog friendly",
+            "quote": "We switched because chemical floor cleaners were setting off my dog's allergies. No reactions since.",
+            "author": "Rohit. K",
+            "context": "Floor Cleaner"
+          }
+        },
+        "review_nreaKJ": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Sparkling taps again",
+            "quote": "Hard water had ruined our bathroom fittings. Two sprays and the scale wipes straight off, no scrubbing.",
+            "author": "Verified buyer",
+            "context": "Tap Cleaner"
+          }
+        },
+        "review_TPf4Vw": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Works like a charm",
+            "quote": "Finally an eco option that cleans as well as the chemical detergent I used for years, and it smells better.",
+            "author": "Karthik",
+            "context": "Laundry detergent"
+          }
+        }
+      },
+      "block_order": [
+        "review_Wwwerq",
+        "review_nreaKJ",
+        "review_TPf4Vw"
+      ],
       "settings": {
         "color_scheme": "scheme-3",
         "kicker": "That's what they said",
