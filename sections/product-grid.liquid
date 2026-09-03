@@ -16,13 +16,14 @@
     </div>
 
     {%- if coll != blank -%}
-      <div class="pl-shelf">
-        {%- for product in coll.products limit: limit -%}
-          {%- render 'pl-product-card', product: product, card_badge_tags: badge_tags, card_index: forloop.index0 | modulo: 4 -%}
-        {%- else -%}
-          <p class="pl-lede">No products in this collection yet.</p>
-        {%- endfor -%}
-      </div>
+     <div class="pl-shelf">
+  {%- for product in coll.products limit: limit -%}
+    {%- assign card_index = forloop.index0 | modulo: 4 -%}
+    {%- render 'pl-product-card', product: product, card_badge_tags: badge_tags, card_index: card_index -%}
+  {%- else -%}
+    <p class="pl-lede">No products in this collection yet.</p>
+  {%- endfor -%}
+</div>
 
       {%- if coll.products.size > limit -%}
         <div class="pl-shop__more">

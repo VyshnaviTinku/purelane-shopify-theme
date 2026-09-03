@@ -32,12 +32,12 @@
         "heading_line_accent": "Lasts",
         "subtext": "Homecare that works on the toughest grime, made from plants. Kind to your home, your family and the world outside it.",
         "primary_label": "Shop now",
-        "primary_link": "",
+        "primary_link": "#shop",
         "secondary_label": "How it works",
-        "secondary_link": ""
+        "secondary_link": "#how"
       }
     },
-    "product_grid": {
+    "product-grid": {
       "type": "product-grid",
       "settings": {
         "color_scheme": "scheme-3",
@@ -50,42 +50,23 @@
     "combos": {
       "type": "combos",
       "blocks": {
-        "combo_gdQVPc": {
+        "combo_9rQDR6": {
           "type": "combo",
           "settings": {
-            "title": "Bathroom deep clean",
+            "title": "Kitchen essentials",
             "product": "",
-            "product_count_label": "2 products",
-            "includes": "Includes: Toilet Cleaner, Tap Cleaner & Magic Eraser. A complete bathroom refresh in one box.",
+            "product_count_label": "3 products",
+            "includes": "Includes: Foaming Kitchen Cleaner, Dishwash Gel & Tap Cleaner. Everything for a sparkling kitchen, no need to pick separately.",
             "save_label": "",
-            "flag": "",
+            "flag": "Most popular",
             "featured": false,
-            "cta_link": "",
-            "item_1_product": "laundry-detergent",
-            "item_1_caption": "Kills 99.9% germs",
-            "item_2_product": "machine-cleaner-powder",
-            "item_2_caption": "Melts hard water stains",
-            "item_3_product": "",
-            "item_3_caption": ""
-          }
-        },
-        "combo_64JcNQ": {
-          "type": "combo",
-          "settings": {
-            "title": "Complete home bundle",
-            "product": "",
-            "product_count_label": "1 products",
-            "includes": "Includes: Kitchen Cleaner, Laundry Detergent, Floor Cleaner, Toilet Cleaner & Handwash. Our biggest saving box.",
-            "save_label": "",
-            "flag": "",
-            "featured": false,
-            "cta_link": "shopify://collections/complete-home-bundle",
-            "item_1_product": "purelane-plant-based-multi-surface-kitchen-bathroom-glass-ceramic-granite-marble-stainless-steel-cleaner-with-natural-citrus-extract-for-everyday-deep-cleaning-and-long-lasting-fresh-fragrance-1-litre-family-value-refill-pack",
-            "item_1_caption": "Cuts grease instantly+Kills 99.9% germs+Gentle hydration for hands",
-            "item_2_product": "",
-            "item_2_caption": "",
-            "item_3_product": "",
-            "item_3_caption": ""
+            "cta_link": "#bundles",
+            "item_1_product": "kitchen-cleaner-foaming",
+            "item_1_caption": "Cuts grease instantly",
+            "item_2_product": "dishwash-gel",
+            "item_2_caption": "Squeaky clean dishes",
+            "item_3_product": "tap-cleaner-limescale-remover",
+            "item_3_caption": "Melts hard water stains"
           }
         },
         "combo_qYPGz6": {
@@ -98,40 +79,79 @@
             "save_label": "",
             "flag": "",
             "featured": false,
-            "cta_link": "shopify://collections/laundry-care-bundle",
+            "cta_link": "#bundles",
             "item_1_product": "laundry-detergent",
             "item_1_caption": "Removes tough stains & odour",
-            "item_2_product": "",
+            "item_2_product": "fabric-conditioner",
             "item_2_caption": "Softens & freshens every wash",
             "item_3_product": "machine-cleaner-powder",
             "item_3_caption": "Deep-cleans your machine"
           }
         },
-        "combo_9rQDR6": {
+        "combo_64JcNQ": {
           "type": "combo",
           "settings": {
-            "title": "Kitchen essentials",
+            "title": "Complete home bundle",
+            "product": "",
+            "product_count_label": "5 products",
+            "includes": "Includes: Kitchen Cleaner, Laundry Detergent, Floor Cleaner, Toilet Cleaner & Handwash. Our biggest saving box.",
+            "save_label": "Biggest saving",
+            "flag": "Best value",
+            "featured": true,
+            "cta_link": "#bundles",
+            "item_1_product": "kitchen-cleaner-foaming",
+            "item_1_caption": "Cuts grease instantly",
+            "item_2_product": "floor-cleaner",
+            "item_2_caption": "Kills 99.9% germs",
+            "item_3_product": "liquid-handwash",
+            "item_3_caption": "Gentle hydration for hands"
+          }
+        },
+        "combo_gdQVPc": {
+          "type": "combo",
+          "settings": {
+            "title": "Bathroom deep clean",
             "product": "",
             "product_count_label": "3 products",
-            "includes": "Includes: Foaming Kitchen Cleaner, Dishwash Gel & Tap Cleaner. Everything for a sparkling kitchen, no need to pick separately.",
+            "includes": "Includes: Toilet Cleaner, Tap Cleaner & Magic Eraser. A complete bathroom refresh in one box.",
             "save_label": "",
             "flag": "",
             "featured": false,
-            "cta_link": "shopify://collections/kitchen-cleaners",
-            "item_1_product": "laundry-detergent",
-            "item_1_caption": "Cuts grease instantly",
-            "item_2_product": "machine-cleaner-powder",
-            "item_2_caption": "Squeaky clean dishes",
-            "item_3_product": "machine-cleaner-powder",
-            "item_3_caption": "Melts hard water stains"
+            "cta_link": "#bundles",
+            "item_1_product": "toilet-cleaner",
+            "item_1_caption": "Kills 99.9% germs",
+            "item_2_product": "tap-cleaner-limescale-remover",
+            "item_2_caption": "Melts hard water stains",
+            "item_3_product": "magic-eraser",
+            "item_3_caption": "Scrubs away soap scum"
+          }
+        },
+        "combo_hw2Kit1": {
+          "type": "combo",
+          "settings": {
+            "title": "Hard water solution kit",
+            "product": "",
+            "product_count_label": "2 products",
+            "includes": "Includes: Tap Cleaner & Toilet Cleaner. A quick, focused fix for hard water stains across the home.",
+            "save_label": "",
+            "flag": "",
+            "featured": false,
+            "cta_link": "#bundles",
+            "item_1_product": "tap-cleaner-limescale-remover",
+            "item_1_caption": "Melts hard water stains",
+            "item_2_product": "toilet-cleaner",
+            "item_2_caption": "Fights limescale in the bowl",
+            "item_3_product": "",
+            "item_3_caption": ""
           }
         }
       },
       "block_order": [
-        "combo_gdQVPc",
-        "combo_64JcNQ",
+        "combo_9rQDR6",
         "combo_qYPGz6",
-        "combo_9rQDR6"
+        "combo_64JcNQ",
+        "combo_gdQVPc",
+        "combo_hw2Kit1"
       ],
       "settings": {
         "color_scheme": "scheme-3",
@@ -144,32 +164,6 @@
     "bundles": {
       "type": "bundles",
       "blocks": {
-        "tier_4XePgh": {
-          "type": "tier",
-          "settings": {
-            "tag": "Family Pack",
-            "quantity": 5,
-            "product": "purelane-plant-based-multi-surface-kitchen-bathroom-glass-ceramic-granite-marble-stainless-steel-cleaner-with-natural-citrus-extract-for-everyday-deep-cleaning-and-long-lasting-fresh-fragrance-1-litre-family-value-refill-pack",
-            "image_1": "shopify://shop_images/Screenshot_2026-08-08_143708.png",
-            "bullets": "Pick any five products\nEvery room in one order\nFree shipping across India",
-            "featured": false,
-            "cta_label": "Build this box",
-            "cta_link": ""
-          }
-        },
-        "tier_bcNY7p": {
-          "type": "tier",
-          "settings": {
-            "tag": "Most popular",
-            "quantity": 3,
-            "product": "copper-bronze-brass-cleaner-premium-value-pack",
-            "image_1": "shopify://shop_images/ChatGPT_Image_Aug_8_2026_11_41_36_AM.png",
-            "bullets": "Pick any three products\nCovers kitchen and laundry\nFree shipping across India",
-            "featured": false,
-            "cta_label": "Build this box",
-            "cta_link": "shopify://collections/complete-home-bundle"
-          }
-        },
         "tier_h36XhL": {
           "type": "tier",
           "settings": {
@@ -180,14 +174,40 @@
             "bullets": "Pick any two products\nFree shipping across India",
             "featured": false,
             "cta_label": "Build this box",
-            "cta_link": "shopify://collections/kitchen-cleaners"
+            "cta_link": "#shop"
+          }
+        },
+        "tier_bcNY7p": {
+          "type": "tier",
+          "settings": {
+            "tag": "Most popular",
+            "quantity": 3,
+            "product": "copper-bronze-brass-cleaner-premium-value-pack",
+            "image_1": "shopify://shop_images/ChatGPT_Image_Aug_8_2026_11_41_36_AM.png",
+            "bullets": "Pick any three products\nCovers kitchen and laundry\nFree shipping across India",
+            "featured": true,
+            "cta_label": "Build this box",
+            "cta_link": "#shop"
+          }
+        },
+        "tier_4XePgh": {
+          "type": "tier",
+          "settings": {
+            "tag": "Whole home",
+            "quantity": 5,
+            "product": "purelane-plant-based-multi-surface-kitchen-bathroom-glass-ceramic-granite-marble-stainless-steel-cleaner-with-natural-citrus-extract-for-everyday-deep-cleaning-and-long-lasting-fresh-fragrance-1-litre-family-value-refill-pack",
+            "image_1": "shopify://shop_images/Screenshot_2026-08-08_143708.png",
+            "bullets": "Pick any five products\nEvery room in one order\nFree shipping across India",
+            "featured": false,
+            "cta_label": "Build this box",
+            "cta_link": "#shop"
           }
         }
       },
       "block_order": [
-        "tier_4XePgh",
+        "tier_h36XhL",
         "tier_bcNY7p",
-        "tier_h36XhL"
+        "tier_4XePgh"
       ],
       "settings": {
         "color_scheme": "scheme-3",
@@ -247,9 +267,9 @@
   },
   "order": [
     "hero",
-    "product_grid",
+    "reviews",
     "combos",
     "bundles",
-    "reviews"
+    "product-grid"
   ]
 }
