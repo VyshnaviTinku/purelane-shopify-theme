@@ -22,6 +22,11 @@
   --pl-r:26px;
   --pl-ease:cubic-bezier(.2,.7,.2,1);
 }
+.header__heading-link{display:flex;align-items:center;gap:10px}
+.mark svg{width:26px;height:26px}
+.txt{display:flex;flex-direction:column;line-height:1.1}
+.n1{font-family:'Outfit',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.02em;font-size:15px;color:var(--pl-surface)}
+.n2{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--pl-accent-2)}
 
 .pl-wrap{max-width:1180px;margin:0 auto;padding:0 18px}
 .pl-d1,.pl-d2,.pl-d3,.pl-d4{font-family:'Outfit',system-ui,sans-serif;text-transform:uppercase;letter-spacing:-.018em;font-weight:800;line-height:.87;color:var(--pl-surface)}
