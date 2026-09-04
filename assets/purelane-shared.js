@@ -58,3 +58,32 @@
     init(e.target);
   });
 })();
+
+/* ---------- scene crossfade (scroll driven, deterministic) ---------- */
+(function () {
+  var scenes = [].slice.call(document.querySelectorAll('.scene'));
+  var zones = [].slice.call(document.querySelectorAll('[data-scene]'));
+  var stage = document.getElementById('scenes');
+  var current = 0;
+
+  function setScene(n) {
+    if (n === current) return;
+    current = n;
+    scenes.forEach(function (s, i) { s.classList.toggle('on', i + 1 === n); });
+    if (stage) stage.setAttribute('data-d', String(n));
+  }
+
+  function pickScene() {
+    var focus = window.scrollY + window.innerHeight * 0.5, n = 1;
+    for (var i = 0; i < zones.length; i++) {
+      var z = zones[i], top = 0, el = z;
+      while (el) { top += el.offsetTop; el = el.offsetParent; }
+      if (top <= focus) n = parseInt(z.getAttribute('data-scene'), 10) || n;
+    }
+    setScene(n);
+  }
+
+  window.addEventListener('scroll', pickScene, { passive: true });
+  window.addEventListener('resize', pickScene);
+  document.addEventListener('DOMContentLoaded', pickScene);
+})();

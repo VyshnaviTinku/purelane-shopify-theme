@@ -46,8 +46,7 @@
           "type": "combo",
           "settings": {
             "title": "Kitchen essentials",
-            "collection": "Kitchen essentials",
-            "bundle_price": "",
+            "product": "Kitchen essentials",
             "product_count_label": "3 products",
             "includes": "Includes: Foaming Kitchen Cleaner, Dishwash Gel & Tap Cleaner. Everything for a sparkling kitchen, no need to pick separately.",
             "save_label": "",
@@ -66,8 +65,8 @@
           "type": "combo",
           "settings": {
             "title": "Laundry care bundle",
-            "collection": "Laundry care bundle",
-             "bundle_price": 499,
+            "product": "Laundry care bundle",
+             
             "product_count_label": "3 products",
             "includes": "Includes: Laundry Detergent, Fabric Conditioner & Machine Cleaner Powder. Softer, fresher wash, all in one box.",
             "save_label": "398",
@@ -87,7 +86,7 @@
           "settings": {
             "title": "Complete home bundle",
             "product": "Complete home bundle",
-            "bundle_price": 799,
+           
             "product_count_label": "5 products",
             "includes": "Includes: Kitchen Cleaner, Laundry Detergent, Floor Cleaner, Toilet Cleaner & Handwash. Our biggest saving box.",
             "save_label": "Biggest saving",
@@ -106,8 +105,8 @@
           "type": "combo",
           "settings": {
             "title": "Bathroom deep clean",
-            "collection": "Bathroom deep clean",
-            "bundle_price": 499,
+            "product": "Bathroom deep clean",
+            
             "product_count_label": "3 products",
             "includes": "Includes: Toilet Cleaner, Tap Cleaner & Magic Eraser. A complete bathroom refresh in one box.",
             "save_label": "",
@@ -127,7 +126,7 @@
           "settings": {
             "title": "Hard water solution kit",
             "product": "Hard water solution kit",
-            "bundle_price": 349,
+            
             "product_count_label": "2 products",
             "includes": "Includes: Tap Cleaner & Toilet Cleaner. A quick, focused fix for hard water stains across the home.",
             "save_label": "",
