@@ -11,8 +11,125 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "purelane_club_mmG64F": {
+      "type": "purelane-club",
+      "name": "Purelane Club",
+      "settings": {
+        "kicker": "Join the Purelane Club",
+        "heading": "Get ₹100 off your first bundle",
+        "description": "Plus first access to new launches and restocks.",
+        "placeholder": "your@email.com",
+        "button_label": "Get my ₹100 off",
+        "success_message": "You're in! Check your inbox for your Purelane Club offer."
+      }
+    },
+    "purelane_footer_NmtBph": {
+      "type": "purelane-footer",
+      "blocks": {
+        "shop_link_jqmFgN": {
+          "type": "shop_link",
+          "settings": {
+            "label": "Bestsellers",
+            "link": ""
+          }
+        },
+        "shop_link_E3b63V": {
+          "type": "shop_link",
+          "settings": {
+            "label": "Kitchen",
+            "link": ""
+          }
+        },
+        "shop_link_3dFp4a": {
+          "type": "shop_link",
+          "settings": {
+            "label": "Laundry",
+            "link": ""
+          }
+        },
+        "shop_link_hGjbLP": {
+          "type": "shop_link",
+          "settings": {
+            "label": "Home",
+            "link": ""
+          }
+        },
+        "shop_link_N6BdiT": {
+          "type": "shop_link",
+          "settings": {
+            "label": "Skin",
+            "link": ""
+          }
+        },
+        "shop_link_zwJWpC": {
+          "type": "shop_link",
+          "settings": {
+            "label": "Starter kits",
+            "link": ""
+          }
+        },
+        "about_link_w9dUi3": {
+          "type": "about_link",
+          "settings": {
+            "label": "How it works",
+            "link": ""
+          }
+        },
+        "about_link_34ETBT": {
+          "type": "about_link",
+          "settings": {
+            "label": "Sustainability",
+            "link": ""
+          }
+        },
+        "about_link_GcqDAL": {
+          "type": "about_link",
+          "settings": {
+            "label": "FAQs",
+            "link": ""
+          }
+        },
+        "about_link_ipLhGg": {
+          "type": "about_link",
+          "settings": {
+            "label": "Reviews",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "shop_link_jqmFgN",
+        "shop_link_E3b63V",
+        "shop_link_3dFp4a",
+        "shop_link_hGjbLP",
+        "shop_link_N6BdiT",
+        "shop_link_zwJWpC",
+        "about_link_w9dUi3",
+        "about_link_34ETBT",
+        "about_link_GcqDAL",
+        "about_link_ipLhGg"
+      ],
+      "name": "Purelane Footer",
+      "settings": {
+        "brand_name": "Purelane",
+        "brand_tagline": "Clean, simply",
+        "brand_description": "Effective cleaning, powered by nature. Made for Indian homes since day one.",
+        "shop_heading": "Shop",
+        "about_heading": "About",
+        "contact_heading": "Get in touch",
+        "email": "hello@purelane.com",
+        "phone": "+91 9930 123 234",
+        "company": "Purelane Eco Products Pvt Ltd",
+        "copyright": "© 2026 Purelane Eco Products Private Limited",
+        "privacy_link": "",
+        "terms_link": "",
+        "refunds_link": "",
+        "contact_link": ""
+      }
+    },
     "footer": {
       "type": "footer",
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-2",
         "newsletter_enable": true,
@@ -30,6 +147,8 @@
     }
   },
   "order": [
+    "purelane_club_mmG64F",
+    "purelane_footer_NmtBph",
     "footer"
   ]
 }
