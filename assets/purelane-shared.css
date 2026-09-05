@@ -101,7 +101,7 @@
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ---------- fixed scene background (crossfades on scroll) ---------- */
-.scenes{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:#eee7fb}
+.scenes{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:#eafaf0}
 .scene{position:absolute;inset:0;opacity:0;transition:opacity 1.5s ease}
 .scene.on{opacity:1}
 .s1{background:linear-gradient(178deg,#fbfffb 0%,#eafaec 24%,#d6f1dc 54%,#bfe8ca 100%)}

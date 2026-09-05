@@ -3,8 +3,22 @@
    ========================================================= */
 
 .pl-proof {
-  width: 100%;
-  padding: 22px 3%;
+  /*
+     Fixed pixel width, not fluid. This box will not resize
+     as the browser window is resized/narrowed on desktop —
+     it stays exactly 1180px and stays centered. (Browser
+     zoom itself, e.g. Ctrl/Cmd +/-, still scales this like
+     everything else on the page — that's the browser
+     rendering the page bigger or smaller wholesale, the same
+     way it scales an image or a fixed-px button, and can't
+     be selectively opted out of for one element. What CAN be
+     fixed, and is fixed here, is the box no longer fluidly
+     resizing in response to *viewport width* changes, which
+     is what was actually happening before via max-width/%.)
+  */
+  width: 1180px;
+  margin: 22px auto;
+  padding: 0;
 
   --pl-ink: #18102b;
   --pl-body: #6b687e;
@@ -96,10 +110,16 @@
 
   font-family: "Outfit", sans-serif;
   font-size: clamp(38px, 4vw, 61px);
-  font-weight: 700;
-  line-height: .98;
 
-  letter-spacing: -.045em;
+  /*
+     Heavier weight + uppercase + tighter leading to match
+     the reference's bold, condensed look.
+  */
+  font-weight: 900;
+  line-height: 0.92;
+
+  letter-spacing: -.03em;
+  text-transform: uppercase;
 }
 
 .pl-proof__body {
@@ -109,8 +129,15 @@
 
   color: var(--pl-body);
 
-  font-size: 15px;
-  line-height: 1.58;
+  /*
+     Slightly smaller and tighter to reduce the visual
+     footprint of this block, matching the reference's more
+     compact paragraph. If you actually want the wording
+     itself shortened rather than just visually tighter,
+     that's a content edit in the section settings, not CSS.
+  */
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 /* ---------------------------------------------------------
@@ -397,6 +424,22 @@
 /* ---------------------------------------------------------
    TABLET
    --------------------------------------------------------- */
+
+@media screen and (max-width: 1216px) {
+
+  /*
+     Below the point where 1180px + side breathing room no
+     longer fits, drop back to fluid so the section doesn't
+     force horizontal scrolling on the whole page. This is
+     the one place width becomes flexible again — everything
+     above this breakpoint stays locked at 1180px.
+  */
+  .pl-proof {
+    width: 100%;
+    max-width: 1180px;
+    padding: 0 18px;
+  }
+}
 
 @media screen and (max-width: 950px) {
 

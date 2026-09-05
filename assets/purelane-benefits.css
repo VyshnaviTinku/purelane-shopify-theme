@@ -3,8 +3,16 @@
    ========================================================= */
 
 .pl-benefits {
-  width: 100%;
-  padding: 22px 3%;
+  /*
+     Fixed pixel width, same as .pl-proof — stays exactly
+     1180px and centered regardless of viewport width, instead
+     of fluidly resizing via width:100% + % padding. Only
+     drops back to fluid below the breakpoint further down,
+     so mobile doesn't get forced into horizontal scrolling.
+  */
+  width: 1180px;
+  margin: 22px auto;
+  padding: 0;
   box-sizing: border-box;
 
   --pl-ink: #18102b;
@@ -146,7 +154,7 @@
 
   font-family: "Outfit", sans-serif;
   font-size: clamp(20px, 1.65vw, 27px);
-  font-weight: 700;
+  font-weight: 900;
   line-height: 1.05;
 
   letter-spacing: -0.025em;
@@ -214,6 +222,25 @@
 
   box-shadow:
     0 8px 20px rgba(58,44,112,.09);
+}
+
+/* ---------------------------------------------------------
+   FLUID BREAKPOINT
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 1216px) {
+
+  /*
+     Below the point where 1180px + side breathing room no
+     longer fits, drop back to fluid so this section doesn't
+     force horizontal scrolling on the whole page. Everything
+     above this breakpoint stays locked at 1180px.
+  */
+  .pl-benefits {
+    width: 100%;
+    max-width: 1180px;
+    padding: 0 18px;
+  }
 }
 
 /* ---------------------------------------------------------
