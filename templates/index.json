@@ -1,4 +1,12 @@
-
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
@@ -29,21 +37,24 @@
           "type": "slide",
           "settings": {
             "label": "Any 3 Product",
-            "tier_product": "any-3-probuct"
+            "tier_product": "any-3-probuct",
+            "image_1": "shopify://shop_images/3bottles.jpg"
           }
         },
         "slide_4gJAE6": {
           "type": "slide",
           "settings": {
             "label": "Any 2 Product",
-            "tier_product": "any-2-product"
+            "tier_product": "any-2-product",
+            "image_1": "shopify://shop_images/2bottles.jpg"
           }
         },
         "slide_cfjErn": {
           "type": "slide",
           "settings": {
             "label": "Single bottle",
-            "tier_product": "laundry-detergent"
+            "tier_product": "laundry-detergent",
+            "image_1": "shopify://shop_images/WhatsApp_Image_2026-09-05_at_9.55.34_PM.jpg"
           }
         }
       },

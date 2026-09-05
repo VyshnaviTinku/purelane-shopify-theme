@@ -320,31 +320,32 @@
 
 /* =========================================================
    PROMISE BADGE
+   Positioned directly inside the product stage so the badge
+   tracks the bundle preview instead of the outer hero.
    ========================================================= */
 
-/*
-   IMPORTANT:
-   The badge is positioned relative to the product stage,
-   not the entire page.
+.pl-hstage {
+  position: relative;
+  width: 100%;
+  height: clamp(470px, 72svh, 680px);
+}
 
-   This makes it overlap the bottle exactly like the
-   supplied reference image.
-*/
+
+/* Badge container */
 
 .pl-hero__badges {
   position: absolute;
 
-  /* Move badge onto the bottle */
-  right: 1.5%;
-
-  /* Vertically center around bottle */
-  top: 52%;
+  /*
+     Position relative to the actual product stage.
+     Move this left/right to fine tune against the bottle.
+  */
+  right: 3%;
+  top: 50%;
 
   transform: translateY(-50%);
 
   width: 120px;
-
-  z-index: 20;
 
   display: flex;
   flex-direction: column;
@@ -353,17 +354,15 @@
 
   box-sizing: border-box;
 
-  border-radius: 22px;
+  z-index: 50;
 
-  /*
-     Light glass appearance from reference
-  */
+  border-radius: 22px;
 
   background:
     linear-gradient(
       180deg,
-      rgba(248, 249, 251, 0.88),
-      rgba(226, 232, 239, 0.82)
+      rgba(248, 249, 251, 0.92),
+      rgba(226, 232, 239, 0.86)
     );
 
   border: 1px solid rgba(255, 255, 255, 0.82);
@@ -374,6 +373,8 @@
 
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+
+  pointer-events: none;
 }
 
 
@@ -390,11 +391,66 @@
 }
 
 
-/* Divider between promises */
+/* Divider */
 
 .pl-badge + .pl-badge {
   border-top:
     1px solid rgba(76, 78, 99, 0.14);
+}
+
+
+/* Badge icon */
+
+.pl-badge__icon {
+  width: 36px;
+  height: 36px;
+
+  margin: 0 auto 9px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.78);
+
+  border:
+    1px solid rgba(105, 114, 122, 0.10);
+
+  color: #5b9d23;
+
+  box-shadow:
+    0 3px 10px rgba(55, 70, 60, 0.07);
+}
+
+
+.pl-badge__icon svg {
+  width: 18px;
+  height: 18px;
+
+  display: block;
+}
+
+
+/* Badge text */
+
+.pl-badge span {
+  display: block;
+
+  font-family: "Outfit", sans-serif;
+
+  font-size: 8.5px;
+  line-height: 1.35;
+
+  font-weight: 800;
+
+  letter-spacing: 0.105em;
+
+  text-transform: uppercase;
+
+  color: #4f4968 !important;
+
+  text-shadow: none;
 }
 
 
