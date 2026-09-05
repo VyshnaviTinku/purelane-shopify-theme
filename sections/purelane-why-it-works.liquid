@@ -1,0 +1,347 @@
+{{ 'purelane-why-it-works.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="purelane-proof-{{ section.id }}"
+  class="pl-proof"
+>
+
+  <div class="pl-proof__panel">
+
+    <div class="pl-proof__top">
+
+      <!-- LEFT CONTENT -->
+      <div class="pl-proof__content">
+
+        {% if section.settings.kicker != blank %}
+          <span class="pl-proof__kicker">
+            {{ section.settings.kicker }}
+          </span>
+        {% endif %}
+
+        <h2 class="pl-proof__heading">
+          {{ section.settings.heading_line_1 }}<br>
+          {{ section.settings.heading_line_2 }}<br class="pl-proof__desktop-break">
+          {{ section.settings.heading_line_3 }}
+        </h2>
+
+        {% if section.settings.body != blank %}
+          <p class="pl-proof__body">
+            {{ section.settings.body }}
+          </p>
+        {% endif %}
+
+        {% if section.settings.button_label != blank %}
+          <a
+            class="pl-proof__button"
+            href="{{ section.settings.button_link }}"
+          >
+            <span>{{ section.settings.button_label }}</span>
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M5 12h13"/>
+              <path d="m13 6 6 6-6 6"/>
+            </svg>
+          </a>
+        {% endif %}
+
+      </div>
+
+
+      <!-- PRODUCT PANEL -->
+      <div class="pl-proof__product">
+
+        <div class="pl-proof__product-image">
+
+          {% if section.settings.product_image != blank %}
+
+            {{
+              section.settings.product_image
+              | image_url: width: 700
+              | image_tag:
+                loading: 'lazy',
+                widths: '300, 450, 600, 700',
+                sizes: '(min-width: 900px) 35vw, 80vw',
+                class: 'pl-proof__product-img',
+                alt: section.settings.product_name
+            }}
+
+          {% else %}
+
+            <svg
+              class="pl-proof__fallback-bottle"
+              viewBox="0 0 380 619"
+              aria-hidden="true"
+            >
+              <defs>
+                <linearGradient
+                  id="pl-bottle-gradient-{{ section.id }}"
+                  x1="0"
+                  y1="0"
+                  x2="1"
+                  y2="1"
+                >
+                  <stop offset="0" stop-color="#7a62c2" stop-opacity=".95"/>
+                  <stop offset="1" stop-color="#7a62c2" stop-opacity=".62"/>
+                </linearGradient>
+              </defs>
+
+              <rect
+                x="150"
+                y="0"
+                width="80"
+                height="62"
+                rx="18"
+                fill="#7a62c2"
+                opacity=".85"
+              />
+
+              <rect
+                x="161"
+                y="56"
+                width="58"
+                height="43"
+                fill="#7a62c2"
+                opacity=".7"
+              />
+
+              <rect
+                x="72"
+                y="124"
+                width="236"
+                height="495"
+                rx="38"
+                fill="url(#pl-bottle-gradient-{{ section.id }})"
+              />
+
+              <rect
+                x="101"
+                y="272"
+                width="179"
+                height="168"
+                rx="12"
+                fill="#faf7fd"
+                opacity=".88"
+              />
+
+              <rect
+                x="129"
+                y="322"
+                width="123"
+                height="22"
+                rx="2"
+                fill="#7a62c2"
+                opacity=".55"
+              />
+
+              <rect
+                x="143"
+                y="366"
+                width="94"
+                height="17"
+                rx="2"
+                fill="#7a62c2"
+                opacity=".35"
+              />
+            </svg>
+
+          {% endif %}
+
+        </div>
+
+        <div class="pl-proof__product-caption">
+          <strong>
+            {{ section.settings.product_name }}
+          </strong>
+
+          <span>
+            {{ section.settings.product_note }}
+          </span>
+        </div>
+
+        <div class="pl-proof__dots" aria-hidden="true">
+          <i></i>
+          <i></i>
+          <i></i>
+          <i class="is-active"></i>
+          <i></i>
+          <i></i>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- STATS -->
+    <div class="pl-proof__stats">
+
+      {% for block in section.blocks %}
+        <div
+          class="pl-proof__stat"
+          {{ block.shopify_attributes }}
+        >
+
+          <div class="pl-proof__ring">
+            {{ block.settings.value }}
+          </div>
+
+          <h3>
+            {{ block.settings.title }}
+          </h3>
+
+          <p>
+            {{ block.settings.description }}
+          </p>
+
+        </div>
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+</section>
+
+{% schema %}
+{
+  "name": "Purelane why it works",
+  "tag": "section",
+  "class": "section-purelane-proof",
+
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker",
+      "default": "Why it works"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_1",
+      "label": "Heading line 1",
+      "default": "Tough on grime."
+    },
+    {
+      "type": "text",
+      "id": "heading_line_2",
+      "label": "Heading line 2",
+      "default": "Gentle on"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_3",
+      "label": "Heading line 3",
+      "default": "everything else."
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Description",
+      "default": "Every formula is built on plant-derived cleansers and essential oils. It behaves exactly like the cleaner you are used to, minus the things you never signed up for."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "See the ingredient list"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product image"
+    },
+    {
+      "type": "text",
+      "id": "product_name",
+      "label": "Product name",
+      "default": "Toilet cleaner"
+    },
+    {
+      "type": "text",
+      "id": "product_note",
+      "label": "Product note",
+      "default": "Kills 99.9% of germs"
+    }
+  ],
+
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Stat",
+      "settings": [
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Value",
+          "default": "99.9%"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Germ kill"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description",
+          "default": "Tested against germs and bacteria"
+        }
+      ]
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Purelane why it works",
+      "blocks": [
+        {
+          "type": "stat",
+          "settings": {
+            "value": "99.9%",
+            "title": "Germ kill",
+            "description": "Tested against germs and bacteria"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "value": "0%",
+            "title": "Sulphates",
+            "description": "No SLS, chlorine or parabens"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "value": "100%",
+            "title": "Plant based",
+            "description": "Cleansers derived from plants"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "value": "4.8",
+            "title": "Rated",
+            "description": "Across 8,000+ verified reviews"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

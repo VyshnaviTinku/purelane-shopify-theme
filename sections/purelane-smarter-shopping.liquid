@@ -1,0 +1,224 @@
+{{ 'purelane-smarter-shopping.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="smarter-shopping-{{ section.id }}"
+  class="pl-smarter-section"
+  data-section-id="{{ section.id }}"
+>
+  <div class="pl-smarter-wrap">
+
+    <div class="pl-smarter-panel">
+
+      <div class="pl-smarter-head">
+
+        {% if section.settings.kicker != blank %}
+          <span class="pl-kicker">
+            {{ section.settings.kicker }}
+          </span>
+        {% endif %}
+
+        {% if section.settings.heading != blank %}
+          <h2 class="pl-smarter-title">
+            {{ section.settings.heading }}
+          </h2>
+        {% endif %}
+
+      </div>
+
+
+      <div class="pl-smarter-grid">
+
+        {% for block in section.blocks %}
+
+          <div
+            class="pl-smarter-item"
+            {{ block.shopify_attributes }}
+          >
+
+            <span class="pl-smarter-icon">
+
+              {% case block.settings.icon %}
+
+                {% when 'save' %}
+
+                  <svg viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M12 3v18"/>
+                    <path d="M16.5 7.2C15.6 6 14 5.4 12 5.4c-2.4 0-4 1.1-4 2.9 0 2 1.7 2.7 4.2 3.3 2.7.6 4.3 1.4 4.3 3.4 0 1.9-1.7 3.1-4.5 3.1-2.2 0-3.8-.7-4.8-2"/>
+                  </svg>
+
+                {% when 'flat' %}
+
+                  <svg viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true">
+                    <rect x="4" y="4" width="16" height="16" rx="3.4"/>
+                    <path d="m8.4 12.2 2.4 2.4 4.8-5"/>
+                  </svg>
+
+                {% when 'expert' %}
+
+                  <svg viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="m12 3.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8L3.6 9.7l5.8-.8Z"/>
+                  </svg>
+
+                {% when 'shipping' %}
+
+                  <svg viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M2.6 16.4V7.2h10.2v9.2"/>
+                    <path d="M12.8 10.4h4l3.6 3.2v2.8h-7.6"/>
+                    <circle cx="6.6" cy="18" r="1.9"/>
+                    <circle cx="16.6" cy="18" r="1.9"/>
+                  </svg>
+
+              {% endcase %}
+
+            </span>
+
+
+            {% if block.settings.title != blank %}
+              <h3 class="pl-smarter-item-title">
+                {{ block.settings.title }}
+              </h3>
+            {% endif %}
+
+            {% if block.settings.description != blank %}
+              <p class="pl-smarter-item-description">
+                {{ block.settings.description }}
+              </p>
+            {% endif %}
+
+          </div>
+
+        {% endfor %}
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Purelane Smarter Shopping",
+  "tag": "section",
+  "class": "purelane-smarter-shopping",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker",
+      "default": "The smarter way to shop"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Why bundles beat buying single"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "save",
+              "label": "Save"
+            },
+            {
+              "value": "flat",
+              "label": "Flat price"
+            },
+            {
+              "value": "expert",
+              "label": "Expert"
+            },
+            {
+              "value": "shipping",
+              "label": "Shipping"
+            }
+          ],
+          "default": "save"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Save up to 45%"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Versus buying the same products separately"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Purelane Smarter Shopping",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "save",
+            "title": "Save up to 45%",
+            "description": "Versus buying the same products separately"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "flat",
+            "title": "One flat price",
+            "description": "No calculators, no comparing carts"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "expert",
+            "title": "Curated by experts",
+            "description": "Products picked to work well together"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "shipping",
+            "title": "Free shipping always",
+            "description": "Included on every bundle, all India"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

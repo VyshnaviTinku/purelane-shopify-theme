@@ -1,4 +1,12 @@
-
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
@@ -35,7 +43,7 @@
         "color_scheme": "scheme-3",
         "kicker": "Bestsellers",
         "heading": "Loved by 30,000 homes",
-        "collection": "frontpage",
+        "collection": "for grid",
         "product_count": 8
       }
     },
@@ -46,7 +54,6 @@
           "type": "combo",
           "settings": {
             "title": "Kitchen essentials",
-            "product": "Kitchen essentials",
             "product_count_label": "3 products",
             "includes": "Includes: Foaming Kitchen Cleaner, Dishwash Gel & Tap Cleaner. Everything for a sparkling kitchen, no need to pick separately.",
             "save_label": "",
@@ -65,8 +72,6 @@
           "type": "combo",
           "settings": {
             "title": "Laundry care bundle",
-            "product": "Laundry care bundle",
-             
             "product_count_label": "3 products",
             "includes": "Includes: Laundry Detergent, Fabric Conditioner & Machine Cleaner Powder. Softer, fresher wash, all in one box.",
             "save_label": "398",
@@ -85,8 +90,6 @@
           "type": "combo",
           "settings": {
             "title": "Complete home bundle",
-            "product": "Complete home bundle",
-           
             "product_count_label": "5 products",
             "includes": "Includes: Kitchen Cleaner, Laundry Detergent, Floor Cleaner, Toilet Cleaner & Handwash. Our biggest saving box.",
             "save_label": "Biggest saving",
@@ -105,8 +108,6 @@
           "type": "combo",
           "settings": {
             "title": "Bathroom deep clean",
-            "product": "Bathroom deep clean",
-            
             "product_count_label": "3 products",
             "includes": "Includes: Toilet Cleaner, Tap Cleaner & Magic Eraser. A complete bathroom refresh in one box.",
             "save_label": "",
@@ -125,8 +126,6 @@
           "type": "combo",
           "settings": {
             "title": "Hard water solution kit",
-            "product": "Hard water solution kit",
-            
             "product_count_label": "2 products",
             "includes": "Includes: Tap Cleaner & Toilet Cleaner. A quick, focused fix for hard water stains across the home.",
             "save_label": "",
@@ -260,7 +259,6 @@
         "speed": 50
       }
     }
-    
   },
   "order": [
     "hero",

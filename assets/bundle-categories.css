@@ -1,0 +1,320 @@
+/* =========================================================
+   PURELANE — BUNDLE CATEGORIES
+   ========================================================= */
+
+.pl-bundle-categories {
+  position: relative;
+  padding: var(--sec-y, 32px) 0;
+}
+
+.pl-bundle-wrap {
+  max-width: var(--maxw, 1240px);
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.pl-bundle-head {
+  margin-bottom: 24px;
+}
+
+.pl-bundle-title {
+  margin: 12px 0 0;
+
+  max-width: 20ch;
+
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: clamp(30px, 4.6vw, 54px);
+  font-weight: 800;
+  line-height: 0.94;
+  letter-spacing: -0.018em;
+  text-transform: uppercase;
+
+  color: var(--surface, #17102b);
+}
+
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.pl-bundle-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.pl-bundle-card {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  padding: 0;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.76),
+      rgba(236, 230, 247, 0.48)
+    );
+
+  border: 1px solid rgba(75, 58, 143, 0.13);
+
+  box-shadow:
+    0 16px 40px rgba(58, 44, 112, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+
+  text-decoration: none;
+  color: inherit;
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.pl-bundle-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 24px 50px rgba(58, 44, 112, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+
+/* =========================================================
+   IMAGE AREA
+   ========================================================= */
+
+.pl-bundle-image {
+  position: relative;
+
+  height: 194px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  padding: 14px 12px 0;
+
+  overflow: hidden;
+}
+
+.pl-bundle-image::before {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      110% 80% at 50% 6%,
+      rgba(236, 230, 247, 0.30),
+      rgba(75, 58, 143, 0.08) 56%,
+      transparent 78%
+    );
+}
+
+.pl-bundle-product-image {
+  position: relative;
+  z-index: 1;
+
+  display: block;
+
+  width: auto;
+  max-width: 82%;
+  height: 170px;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(0 10px 15px rgba(0, 74, 66, 0.14));
+
+  transition: transform 0.4s ease;
+}
+
+.pl-bundle-card:hover .pl-bundle-product-image {
+  transform: translateY(-4px);
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+   ========================================================= */
+
+.pl-bundle-placeholder {
+  position: relative;
+  z-index: 1;
+
+  width: 80px;
+  height: 140px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px dashed rgba(75, 58, 143, 0.22);
+  border-radius: 14px;
+
+  font-size: 9px;
+
+  color: rgba(36, 26, 61, 0.45);
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.pl-bundle-content {
+  padding: 15px 16px 18px;
+}
+
+.pl-bundle-card-title {
+  margin: 0 0 6px;
+
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+
+  color: var(--surface, #17102b);
+}
+
+.pl-bundle-card-description {
+  margin: 0;
+
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 12.2px;
+  line-height: 1.5;
+
+  color: var(
+    --paper-2,
+    rgba(36, 26, 61, 0.76)
+  );
+}
+
+
+/* =========================================================
+   SHOP LINK
+   ========================================================= */
+
+.pl-bundle-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  margin-top: 11px;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+
+  color: #4f7d10;
+}
+
+.pl-bundle-arrow span {
+  font-size: 14px;
+
+  transition: transform 0.25s ease;
+}
+
+.pl-bundle-card:hover .pl-bundle-arrow span {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 900px) {
+
+  .pl-bundle-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .pl-bundle-card-title {
+    font-size: 13.5px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+  .pl-bundle-categories {
+    padding: 22px 0;
+  }
+
+  .pl-bundle-head {
+    margin-bottom: 18px;
+  }
+
+  .pl-bundle-title {
+    font-size: clamp(30px, 8vw, 42px);
+  }
+
+  .pl-bundle-image {
+    height: 155px;
+  }
+
+  .pl-bundle-product-image {
+    height: 135px;
+  }
+
+  .pl-bundle-content {
+    padding: 13px 13px 16px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+  .pl-bundle-grid {
+    gap: 10px;
+  }
+
+  .pl-bundle-image {
+    height: 140px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .pl-bundle-product-image {
+    height: 122px;
+  }
+
+  .pl-bundle-card-title {
+    font-size: 12px;
+  }
+
+  .pl-bundle-card-description {
+    font-size: 11px;
+  }
+
+}

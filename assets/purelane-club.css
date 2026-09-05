@@ -1,0 +1,280 @@
+/* =========================================================
+   PURELANE — JOIN THE CLUB
+   ========================================================= */
+
+.pl-club-section {
+  position: relative;
+  padding: var(--sec-y, 32px) 0;
+}
+
+.pl-club-wrap {
+  max-width: var(--maxw, 1240px);
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.pl-club-card {
+  padding: clamp(28px, 4vw, 46px);
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.78),
+      rgba(236, 230, 247, 0.50)
+    );
+
+  border: 1px solid rgba(75, 58, 143, 0.14);
+  border-radius: 24px;
+
+  box-shadow:
+    0 22px 54px rgba(58, 44, 112, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.pl-club-title {
+  margin: 12px 0 0;
+
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: clamp(30px, 4.6vw, 54px);
+  font-weight: 800;
+  line-height: 0.94;
+  letter-spacing: -0.018em;
+  text-transform: uppercase;
+
+  color: var(--surface, #17102b);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.pl-club-description {
+  max-width: 44ch;
+
+  margin: 12px auto 0;
+
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: clamp(14px, 1.35vw, 17.5px);
+  line-height: 1.6;
+
+  color: var(
+    --paper-2,
+    rgba(36, 26, 61, 0.78)
+  );
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.pl-club-form {
+  width: 100%;
+  max-width: 430px;
+
+  margin: 22px auto 0;
+}
+
+.pl-club-form-row {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.pl-club-input {
+  flex: 1;
+  min-width: 0;
+
+  height: 46px;
+
+  padding: 0 18px;
+
+  border-radius: 999px;
+
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+
+  color: var(--surface, #17102b);
+
+  background: rgba(236, 230, 247, 0.42);
+
+  border: 1px solid rgba(75, 58, 143, 0.20);
+
+  outline: none;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.pl-club-input::placeholder {
+  color: rgba(36, 26, 61, 0.48);
+}
+
+.pl-club-input:focus {
+  border-color: #4f7d10;
+
+  background: rgba(255, 255, 255, 0.68);
+
+  box-shadow:
+    0 0 0 3px rgba(79, 125, 16, 0.10);
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.pl-club-button {
+  flex: 0 0 auto;
+
+  height: 46px;
+
+  padding: 0 22px;
+
+  border: 0;
+  border-radius: 999px;
+
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+
+  color: #f4fdf6;
+
+  background:
+    linear-gradient(
+      135deg,
+      #00706a,
+      #004b46
+    );
+
+  box-shadow:
+    0 12px 26px rgba(0, 80, 74, 0.26),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.pl-club-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 18px 36px rgba(0, 80, 74, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+.pl-club-button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   FORM MESSAGES
+   ========================================================= */
+
+.pl-club-message {
+  margin: 12px 0 0;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.pl-club-success {
+  color: #4f7d10;
+}
+
+.pl-club-error {
+  color: #a23a32;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.pl-club-section .visually-hidden {
+  position: absolute !important;
+
+  width: 1px;
+  height: 1px;
+
+  padding: 0;
+  margin: -1px;
+
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+
+  white-space: nowrap;
+
+  border: 0;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .pl-club-card {
+    padding: 28px 18px;
+    border-radius: 20px;
+  }
+
+  .pl-club-title {
+    font-size: clamp(30px, 8vw, 42px);
+  }
+
+  .pl-club-description {
+    font-size: 14px;
+  }
+
+  .pl-club-form {
+    margin-top: 20px;
+  }
+
+  .pl-club-form-row {
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .pl-club-input,
+  .pl-club-button {
+    width: 100%;
+  }
+
+  .pl-club-button {
+    flex: none;
+  }
+
+}

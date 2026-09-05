@@ -1,0 +1,269 @@
+/* =========================================================
+   PURELANE BENEFITS
+   ========================================================= */
+
+.pl-benefits {
+  width: 100%;
+  padding: 22px 3%;
+  box-sizing: border-box;
+
+  --pl-ink: #18102b;
+  --pl-body: #6b687e;
+  --pl-green: #4f7d10;
+  --pl-teal: #005f59;
+  --pl-border: rgba(75, 58, 143, 0.16);
+}
+
+.pl-benefits *,
+.pl-benefits *::before,
+.pl-benefits *::after {
+  box-sizing: border-box;
+}
+
+.pl-benefits__grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* ---------------------------------------------------------
+   CARD
+   --------------------------------------------------------- */
+
+.pl-benefit-card {
+  position: relative;
+  min-height: 400px;
+
+  padding: 34px 31px 30px;
+
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid var(--pl-border);
+  border-radius: 31px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 18px 42px rgba(58, 44, 112, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+
+  isolation: isolate;
+}
+
+.pl-benefit-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      115deg,
+      rgba(255,255,255,.45),
+      transparent 33%,
+      transparent 73%,
+      rgba(201,118,29,.05)
+    );
+}
+
+/* ---------------------------------------------------------
+   CARD BACKGROUNDS
+   --------------------------------------------------------- */
+
+.pl-benefit-card--green {
+  background:
+    linear-gradient(
+      145deg,
+      #e9f7ed 0%,
+      #d9efdf 100%
+    );
+}
+
+.pl-benefit-card--mint {
+  background:
+    linear-gradient(
+      145deg,
+      #e5f5e9 0%,
+      #d2ecda 100%
+    );
+}
+
+.pl-benefit-card--soft {
+  background:
+    linear-gradient(
+      145deg,
+      #eaf7ed 0%,
+      #dff1e5 100%
+    );
+}
+
+/* ---------------------------------------------------------
+   ICON
+   --------------------------------------------------------- */
+
+.pl-benefit-card__icon {
+  width: 51px;
+  height: 51px;
+
+  display: grid;
+  place-items: center;
+
+  margin-bottom: 19px;
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      150deg,
+      rgba(240,160,60,.20),
+      rgba(75,58,143,.17)
+    );
+
+  border: 1px solid rgba(75,58,143,.15);
+
+  color: var(--pl-teal);
+}
+
+.pl-benefit-card__icon svg {
+  width: 25px;
+  height: 25px;
+  display: block;
+}
+
+/* ---------------------------------------------------------
+   TITLE
+   --------------------------------------------------------- */
+
+.pl-benefit-card__title {
+  margin: 0 0 12px;
+
+  color: var(--pl-ink);
+
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(20px, 1.65vw, 27px);
+  font-weight: 700;
+  line-height: 1.05;
+
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+
+/* ---------------------------------------------------------
+   DESCRIPTION
+   --------------------------------------------------------- */
+
+.pl-benefit-card__description {
+  max-width: 38ch;
+
+  margin: 0;
+
+  color: var(--pl-body);
+
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+/* ---------------------------------------------------------
+   BUTTON
+   --------------------------------------------------------- */
+
+.pl-benefit-card__button {
+  align-self: flex-start;
+
+  min-height: 48px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: auto;
+  padding: 0 20px;
+
+  border: 1px solid rgba(75,58,143,.17);
+  border-radius: 999px;
+
+  background: rgba(255,255,255,.28);
+
+  color: var(--pl-ink);
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+
+  text-decoration: none;
+
+  transition:
+    transform .2s ease,
+    background .2s ease,
+    box-shadow .2s ease;
+}
+
+.pl-benefit-card__button:hover {
+  transform: translateY(-2px);
+
+  background: rgba(255,255,255,.58);
+
+  box-shadow:
+    0 8px 20px rgba(58,44,112,.09);
+}
+
+/* ---------------------------------------------------------
+   TABLET
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 900px) {
+
+  .pl-benefits {
+    padding: 18px;
+  }
+
+  .pl-benefits__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .pl-benefit-card {
+    min-height: 330px;
+  }
+
+}
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 600px) {
+
+  .pl-benefits {
+    padding: 14px;
+  }
+
+  .pl-benefit-card {
+    min-height: 320px;
+    padding: 27px 24px 25px;
+    border-radius: 25px;
+  }
+
+  .pl-benefit-card__icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 17px;
+  }
+
+  .pl-benefit-card__title {
+    font-size: 21px;
+  }
+
+  .pl-benefit-card__description {
+    font-size: 13.5px;
+  }
+
+}

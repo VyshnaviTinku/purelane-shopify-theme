@@ -1,0 +1,267 @@
+/* =========================================================
+   PURELANE — FULL RANGE
+   ========================================================= */
+
+.pl-range-section {
+  position: relative;
+  padding: var(--sec-y, 32px) 0;
+}
+
+.pl-range-wrap {
+  max-width: var(--maxw, 1240px);
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+.pl-range-panel {
+  padding: clamp(20px, 2.6vw, 30px);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.76),
+      rgba(236, 230, 247, 0.48)
+    );
+
+  border: 1px solid rgba(75, 58, 143, 0.14);
+  border-radius: 24px;
+
+  box-shadow:
+    0 22px 54px rgba(58, 44, 112, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+}
+
+
+/* ---------- HEADER ---------- */
+
+.pl-range-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+
+.pl-range-heading {
+  min-width: 220px;
+}
+
+.pl-range-heading .pl-kicker {
+  display: block;
+}
+
+.pl-range-title {
+  margin: 10px 0 0;
+  max-width: 20ch;
+
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: clamp(30px, 4.6vw, 54px);
+  font-weight: 800;
+  line-height: 0.94;
+  letter-spacing: -0.018em;
+  text-transform: uppercase;
+
+  color: var(--surface, #17102b);
+}
+
+.pl-range-description {
+  max-width: 34ch;
+  margin: 0 0 4px;
+
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14.5px;
+  line-height: 1.66;
+
+  color: var(--paper-2, rgba(36, 26, 61, 0.78));
+}
+
+
+/* ---------- PRODUCT STRIP ---------- */
+
+.pl-range-strip-wrap {
+  margin: 10px 0 0;
+}
+
+.pl-range-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 6px;
+
+  min-height: 150px;
+}
+
+.pl-range-product {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  min-width: 90px;
+}
+
+.pl-range-product-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+
+  color: inherit;
+  text-decoration: none;
+}
+
+.pl-range-product-image {
+  display: block;
+
+  width: auto;
+  height: 132px;
+
+  object-fit: contain;
+
+  filter: drop-shadow(
+    0 12px 18px rgba(1, 24, 22, 0.16)
+  );
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.pl-range-product:nth-child(even) .pl-range-product-image {
+  height: 118px;
+}
+
+.pl-range-product:hover .pl-range-product-image {
+  transform: translateY(-5px);
+  filter: drop-shadow(
+    0 16px 22px rgba(1, 24, 22, 0.20)
+  );
+}
+
+.pl-range-product-title {
+  display: none;
+
+  margin-top: 6px;
+
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+
+  color: var(--surface, #17102b);
+}
+
+.pl-range-placeholder {
+  display: grid;
+  place-items: center;
+
+  width: 72px;
+  height: 120px;
+
+  border: 1px dashed rgba(75, 58, 143, 0.2);
+  border-radius: 14px;
+
+  font-size: 9px;
+  text-align: center;
+
+  color: rgba(36, 26, 61, 0.45);
+}
+
+
+/* ---------- SWIPE HINT ---------- */
+
+.pl-range-hint {
+  display: none;
+
+  margin: 4px 0 0;
+
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.16em;
+  text-align: center;
+  text-transform: uppercase;
+
+  color: rgba(36, 26, 61, 0.50);
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 760px) {
+
+  .pl-range-panel {
+    padding: 22px 18px;
+  }
+
+  .pl-range-head {
+    gap: 10px;
+  }
+
+  .pl-range-description {
+    max-width: 100%;
+  }
+
+  .pl-range-strip-wrap {
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    margin: 6px -18px 0;
+    padding: 0 18px 6px;
+
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+
+  .pl-range-strip-wrap::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pl-range-row {
+    justify-content: flex-start;
+    gap: 10px;
+
+    min-height: 132px;
+    width: max-content;
+  }
+
+  .pl-range-product {
+    min-width: 74px;
+  }
+
+  .pl-range-product-image {
+    height: 116px;
+  }
+
+  .pl-range-product:nth-child(even) .pl-range-product-image {
+    height: 104px;
+  }
+
+  .pl-range-hint {
+    display: block;
+  }
+}
+
+
+/* ---------- SMALL MOBILE ---------- */
+
+@media (max-width: 420px) {
+
+  .pl-range-panel {
+    border-radius: 20px;
+  }
+
+  .pl-range-title {
+    font-size: 32px;
+  }
+
+  .pl-range-description {
+    font-size: 13px;
+  }
+
+}

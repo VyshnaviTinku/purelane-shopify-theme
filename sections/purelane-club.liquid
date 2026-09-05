@@ -1,0 +1,149 @@
+{{ 'purelane-club.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="purelane-club-{{ section.id }}"
+  class="pl-club-section"
+>
+  <div class="pl-club-wrap">
+
+    <div class="pl-club-card">
+
+      {% if section.settings.kicker != blank %}
+        <span class="pl-kicker">
+          {{ section.settings.kicker }}
+        </span>
+      {% endif %}
+
+
+      {% if section.settings.heading != blank %}
+        <h2 class="pl-club-title">
+          {{ section.settings.heading }}
+        </h2>
+      {% endif %}
+
+
+      {% if section.settings.description != blank %}
+        <p class="pl-club-description">
+          {{ section.settings.description }}
+        </p>
+      {% endif %}
+
+
+      {% form 'customer', class: 'pl-club-form' %}
+
+        <input
+          type="hidden"
+          name="contact[tags]"
+          value="purelane-club"
+        >
+
+        <div class="pl-club-form-row">
+
+          <label
+            for="PurelaneClubEmail-{{ section.id }}"
+            class="visually-hidden"
+          >
+            Email address
+          </label>
+
+          <input
+            id="PurelaneClubEmail-{{ section.id }}"
+            type="email"
+            name="contact[email]"
+            value="{{ form.email }}"
+            class="pl-club-input"
+            placeholder="{{ section.settings.placeholder }}"
+            autocomplete="email"
+            autocorrect="off"
+            autocapitalize="off"
+            required
+          >
+
+          <button
+            type="submit"
+            class="pl-club-button"
+          >
+            {{ section.settings.button_label }}
+          </button>
+
+        </div>
+
+
+        {% if form.posted_successfully? %}
+
+          <p class="pl-club-message pl-club-success" role="status">
+            {{ section.settings.success_message }}
+          </p>
+
+        {% endif %}
+
+
+        {% if form.errors %}
+
+          <div
+            class="pl-club-message pl-club-error"
+            role="alert"
+          >
+            {{ form.errors | default_errors }}
+          </div>
+
+        {% endif %}
+
+      {% endform %}
+
+    </div>
+
+  </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Purelane Club",
+  "tag": "section",
+  "class": "purelane-club",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker",
+      "default": "Join the Purelane Club"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Get ₹100 off your first bundle"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Plus first access to new launches and restocks."
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Email placeholder",
+      "default": "your@email.com"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Get my ₹100 off"
+    },
+    {
+      "type": "textarea",
+      "id": "success_message",
+      "label": "Success message",
+      "default": "You're in! Check your inbox for your Purelane Club offer."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Purelane Club"
+    }
+  ]
+}
+{% endschema %}

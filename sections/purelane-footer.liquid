@@ -1,0 +1,375 @@
+{{ 'purelane-footer.css' | asset_url | stylesheet_tag }}
+
+<footer
+  id="purelane-footer-{{ section.id }}"
+  class="pl-footer"
+>
+  <div class="pl-footer-wrap">
+
+    <div class="pl-footer-grid">
+
+      <!-- BRAND -->
+      <div class="pl-footer-column pl-footer-brand">
+
+        <a
+          href="{{ routes.root_url }}"
+          class="pl-footer-logo"
+          aria-label="{{ shop.name }}"
+        >
+
+          <span class="pl-footer-mark">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 21c0-6.5 3.5-11 8-12.5C20 15 16.5 20 12 21Z"/>
+              <path d="M12 21C12 14.5 8.5 10 4 8.5 4 15 7.5 20 12 21Z"/>
+              <path d="M12 21v-6"/>
+            </svg>
+          </span>
+
+          <span class="pl-footer-logo-text">
+            <span class="pl-footer-logo-name">
+              {{ section.settings.brand_name }}
+            </span>
+
+            <span class="pl-footer-logo-tagline">
+              {{ section.settings.brand_tagline }}
+            </span>
+          </span>
+
+        </a>
+
+
+        {% if section.settings.brand_description != blank %}
+          <p class="pl-footer-description">
+            {{ section.settings.brand_description }}
+          </p>
+        {% endif %}
+
+      </div>
+
+
+      <!-- SHOP -->
+      <div class="pl-footer-column">
+
+        <h3 class="pl-footer-heading">
+          {{ section.settings.shop_heading }}
+        </h3>
+
+        {% for block in section.blocks %}
+          {% if block.type == 'shop_link' %}
+
+            <a
+              href="{{ block.settings.link }}"
+              class="pl-footer-link"
+              {{ block.shopify_attributes }}
+            >
+              {{ block.settings.label }}
+            </a>
+
+          {% endif %}
+        {% endfor %}
+
+      </div>
+
+
+      <!-- ABOUT -->
+      <div class="pl-footer-column">
+
+        <h3 class="pl-footer-heading">
+          {{ section.settings.about_heading }}
+        </h3>
+
+        {% for block in section.blocks %}
+          {% if block.type == 'about_link' %}
+
+            <a
+              href="{{ block.settings.link }}"
+              class="pl-footer-link"
+              {{ block.shopify_attributes }}
+            >
+              {{ block.settings.label }}
+            </a>
+
+          {% endif %}
+        {% endfor %}
+
+      </div>
+
+
+      <!-- CONTACT -->
+      <div class="pl-footer-column">
+
+        <h3 class="pl-footer-heading">
+          {{ section.settings.contact_heading }}
+        </h3>
+
+        {% if section.settings.email != blank %}
+          <a
+            href="mailto:{{ section.settings.email }}"
+            class="pl-footer-link"
+          >
+            {{ section.settings.email }}
+          </a>
+        {% endif %}
+
+        {% if section.settings.phone != blank %}
+          <a
+            href="tel:{{ section.settings.phone | remove: ' ' }}"
+            class="pl-footer-link"
+          >
+            {{ section.settings.phone }}
+          </a>
+        {% endif %}
+
+        {% if section.settings.company != blank %}
+          <p class="pl-footer-company">
+            {{ section.settings.company }}
+          </p>
+        {% endif %}
+
+      </div>
+
+    </div>
+
+
+    <!-- BOTTOM -->
+    <div class="pl-footer-bottom">
+
+      <span>
+        {{ section.settings.copyright }}
+      </span>
+
+      <div class="pl-footer-legal">
+
+        {% if section.settings.privacy_link != blank %}
+          <a href="{{ section.settings.privacy_link }}">
+            Privacy
+          </a>
+        {% endif %}
+
+        {% if section.settings.terms_link != blank %}
+          <a href="{{ section.settings.terms_link }}">
+            Terms
+          </a>
+        {% endif %}
+
+        {% if section.settings.refunds_link != blank %}
+          <a href="{{ section.settings.refunds_link }}">
+            Refunds
+          </a>
+        {% endif %}
+
+        {% if section.settings.contact_link != blank %}
+          <a href="{{ section.settings.contact_link }}">
+            Contact
+          </a>
+        {% endif %}
+
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+
+{% schema %}
+{
+  "name": "Purelane Footer",
+  "tag": "section",
+  "class": "purelane-footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "brand_name",
+      "label": "Brand name",
+      "default": "Purelane"
+    },
+    {
+      "type": "text",
+      "id": "brand_tagline",
+      "label": "Brand tagline",
+      "default": "Clean, simply"
+    },
+    {
+      "type": "textarea",
+      "id": "brand_description",
+      "label": "Brand description",
+      "default": "Effective cleaning, powered by nature. Made for Indian homes since day one."
+    },
+    {
+      "type": "text",
+      "id": "shop_heading",
+      "label": "Shop heading",
+      "default": "Shop"
+    },
+    {
+      "type": "text",
+      "id": "about_heading",
+      "label": "About heading",
+      "default": "About"
+    },
+    {
+      "type": "text",
+      "id": "contact_heading",
+      "label": "Contact heading",
+      "default": "Get in touch"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email",
+      "default": "hello@purelane.com"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Phone",
+      "default": "+91 9930 123 234"
+    },
+    {
+      "type": "text",
+      "id": "company",
+      "label": "Company",
+      "default": "Purelane Eco Products Pvt Ltd"
+    },
+    {
+      "type": "text",
+      "id": "copyright",
+      "label": "Copyright",
+      "default": "© 2026 Purelane Eco Products Private Limited"
+    },
+    {
+      "type": "url",
+      "id": "privacy_link",
+      "label": "Privacy link"
+    },
+    {
+      "type": "url",
+      "id": "terms_link",
+      "label": "Terms link"
+    },
+    {
+      "type": "url",
+      "id": "refunds_link",
+      "label": "Refunds link"
+    },
+    {
+      "type": "url",
+      "id": "contact_link",
+      "label": "Contact link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "shop_link",
+      "name": "Shop link",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Bestsellers"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    },
+    {
+      "type": "about_link",
+      "name": "About link",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "How it works"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {
+      "name": "Purelane Footer",
+      "blocks": [
+        {
+          "type": "shop_link",
+          "settings": {
+            "label": "Bestsellers"
+          }
+        },
+        {
+          "type": "shop_link",
+          "settings": {
+            "label": "Kitchen"
+          }
+        },
+        {
+          "type": "shop_link",
+          "settings": {
+            "label": "Laundry"
+          }
+        },
+        {
+          "type": "shop_link",
+          "settings": {
+            "label": "Home"
+          }
+        },
+        {
+          "type": "shop_link",
+          "settings": {
+            "label": "Skin"
+          }
+        },
+        {
+          "type": "shop_link",
+          "settings": {
+            "label": "Starter kits"
+          }
+        },
+        {
+          "type": "about_link",
+          "settings": {
+            "label": "How it works"
+          }
+        },
+        {
+          "type": "about_link",
+          "settings": {
+            "label": "Sustainability"
+          }
+        },
+        {
+          "type": "about_link",
+          "settings": {
+            "label": "FAQs"
+          }
+        },
+        {
+          "type": "about_link",
+          "settings": {
+            "label": "Reviews"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

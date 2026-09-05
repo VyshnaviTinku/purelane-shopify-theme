@@ -1,0 +1,206 @@
+{{ 'purelane-benefits.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="purelane-benefits-{{ section.id }}"
+  class="pl-benefits"
+>
+  <div class="pl-benefits__grid">
+
+    {% for block in section.blocks %}
+      <article
+        class="pl-benefit-card pl-benefit-card--{{ block.settings.theme }}"
+        {{ block.shopify_attributes }}
+      >
+
+        <div class="pl-benefit-card__icon">
+          {% case block.settings.icon %}
+
+            {% when 'scrub' %}
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="8" cy="8.5" r="3.2"/>
+                <circle cx="16.4" cy="6.6" r="2.2"/>
+                <circle cx="15" cy="13" r="2.8"/>
+                <circle cx="8.6" cy="15.6" r="2.1"/>
+                <path d="M4 21h16"/>
+              </svg>
+
+            {% when 'ingredients' %}
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M12 3 4.5 6v6.2c0 4.3 3.1 7.6 7.5 8.8 4.4-1.2 7.5-4.5 7.5-8.8V6L12 3Z"/>
+                <path d="m9 12 2.2 2.2L15.4 10"/>
+              </svg>
+
+            {% when 'safe' %}
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M12 20s-7-4.4-7-9.4A4.1 4.1 0 0 1 12 8a4.1 4.1 0 0 1 7 2.6c0 5-7 9.4-7 9.4Z"/>
+              </svg>
+
+          {% endcase %}
+        </div>
+
+        <h3 class="pl-benefit-card__title">
+          {{ block.settings.title }}
+        </h3>
+
+        <p class="pl-benefit-card__description">
+          {{ block.settings.description }}
+        </p>
+
+        {% if block.settings.button_label != blank %}
+          <a
+            class="pl-benefit-card__button"
+            href="{{ block.settings.button_link }}"
+          >
+            {{ block.settings.button_label }}
+          </a>
+        {% endif %}
+
+      </article>
+    {% endfor %}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Purelane benefits",
+  "tag": "section",
+  "class": "section-purelane-benefits",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "scrub",
+              "label": "Scrubbing"
+            },
+            {
+              "value": "ingredients",
+              "label": "Clean ingredients"
+            },
+            {
+              "value": "safe",
+              "label": "Safe"
+            }
+          ],
+          "default": "scrub"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Less scrubbing"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "A foaming formulation. The foam clings to grease and lifts it, so you wipe instead of scrub."
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Learn more"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        },
+        {
+          "type": "select",
+          "id": "theme",
+          "label": "Card style",
+          "options": [
+            {
+              "value": "green",
+              "label": "Green"
+            },
+            {
+              "value": "mint",
+              "label": "Mint"
+            },
+            {
+              "value": "soft",
+              "label": "Soft green"
+            }
+          ],
+          "default": "green"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Purelane benefits",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "scrub",
+            "title": "Less scrubbing",
+            "description": "A foaming formulation. The foam clings to grease and lifts it, so you wipe instead of scrub.",
+            "button_label": "Learn more",
+            "button_link": "#ingredients",
+            "theme": "green"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "ingredients",
+            "title": "Clean ingredients",
+            "description": "No sulphates, no chlorine, no synthetic fragrance. Nothing on the label you would not want near your food.",
+            "button_label": "Learn more",
+            "button_link": "#ingredients",
+            "theme": "mint"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "safe",
+            "title": "Safe around everyone",
+            "description": "Gentle on hands, safe around kids and pets, and it leaves no toxic residue on the surfaces you touch every day.",
+            "button_label": "Learn more",
+            "button_link": "#proof",
+            "theme": "soft"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
