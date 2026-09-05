@@ -12,6 +12,41 @@
     "hero": {
       "type": "hero",
       "blocks": {
+        "badge_kTzL77": {
+          "type": "badge",
+          "settings": {
+            "icon": "leaf",
+            "label": "Plant powered"
+          }
+        },
+        "badge_LFqYCa": {
+          "type": "badge",
+          "settings": {
+            "icon": "shield-check",
+            "label": "Safe for kids & pets"
+          }
+        },
+        "badge_xQKP8q": {
+          "type": "badge",
+          "settings": {
+            "icon": "no-chemical",
+            "label": "Zero harsh chemicals"
+          }
+        },
+        "slide_efAcGT": {
+          "type": "slide",
+          "settings": {
+            "label": "Any 3 Product",
+            "tier_product": "any-3-probuct"
+          }
+        },
+        "slide_4gJAE6": {
+          "type": "slide",
+          "settings": {
+            "label": "Any 2 Product",
+            "tier_product": "any-2-product"
+          }
+        },
         "slide_cfjErn": {
           "type": "slide",
           "settings": {
@@ -21,6 +56,11 @@
         }
       },
       "block_order": [
+        "badge_kTzL77",
+        "badge_LFqYCa",
+        "badge_xQKP8q",
+        "slide_efAcGT",
+        "slide_4gJAE6",
         "slide_cfjErn"
       ],
       "settings": {
@@ -84,182 +124,6 @@
         "speed": 50
       }
     },
-    "combos": {
-      "type": "combos",
-      "blocks": {
-        "combo_9rQDR6": {
-          "type": "combo",
-          "settings": {
-            "title": "Kitchen essentials",
-            "product": "",
-            "product_count_label": "3 products",
-            "includes": "Includes: Foaming Kitchen Cleaner, Dishwash Gel & Tap Cleaner. Everything for a sparkling kitchen, no need to pick separately.",
-            "save_label": "",
-            "flag": "Most popular",
-            "featured": false,
-            "cta_link": "#bundles",
-            "item_1_product": "kitchen-cleaner-foaming",
-            "item_1_caption": "Cuts grease instantly",
-            "item_2_product": "dishwash-gel",
-            "item_2_caption": "Squeaky clean dishes",
-            "item_3_product": "tap-cleaner-limescale-remover",
-            "item_3_caption": "Melts hard water stains"
-          }
-        },
-        "combo_qYPGz6": {
-          "type": "combo",
-          "settings": {
-            "title": "Laundry care bundle",
-            "product": "",
-            "product_count_label": "3 products",
-            "includes": "Includes: Laundry Detergent, Fabric Conditioner & Machine Cleaner Powder. Softer, fresher wash, all in one box.",
-            "save_label": "398",
-            "flag": "",
-            "featured": false,
-            "cta_link": "#bundles",
-            "item_1_product": "laundry-detergent",
-            "item_1_caption": "Removes tough stains & odour",
-            "item_2_product": "fabric-conditioner",
-            "item_2_caption": "Softens & freshens every wash",
-            "item_3_product": "machine-cleaner-powder",
-            "item_3_caption": "Deep-cleans your machine"
-          }
-        },
-        "combo_64JcNQ": {
-          "type": "combo",
-          "settings": {
-            "title": "Complete home bundle",
-            "product": "",
-            "product_count_label": "5 products",
-            "includes": "Includes: Kitchen Cleaner, Laundry Detergent, Floor Cleaner, Toilet Cleaner & Handwash. Our biggest saving box.",
-            "save_label": "Biggest saving",
-            "flag": "Best value",
-            "featured": true,
-            "cta_link": "#bundles",
-            "item_1_product": "kitchen-cleaner-foaming",
-            "item_1_caption": "Cuts grease instantly",
-            "item_2_product": "floor-cleaner",
-            "item_2_caption": "Kills 99.9% germs",
-            "item_3_product": "liquid-handwash",
-            "item_3_caption": "Gentle hydration for hands"
-          }
-        },
-        "combo_gdQVPc": {
-          "type": "combo",
-          "settings": {
-            "title": "Bathroom deep clean",
-            "product": "",
-            "product_count_label": "3 products",
-            "includes": "Includes: Toilet Cleaner, Tap Cleaner & Magic Eraser. A complete bathroom refresh in one box.",
-            "save_label": "",
-            "flag": "",
-            "featured": false,
-            "cta_link": "#bundles",
-            "item_1_product": "toilet-cleaner",
-            "item_1_caption": "Kills 99.9% germs",
-            "item_2_product": "tap-cleaner-limescale-remover",
-            "item_2_caption": "Melts hard water stains",
-            "item_3_product": "magic-eraser",
-            "item_3_caption": "Scrubs away soap scum"
-          }
-        },
-        "combo_hw2Kit1": {
-          "type": "combo",
-          "settings": {
-            "title": "Hard water solution kit",
-            "product": "",
-            "product_count_label": "2 products",
-            "includes": "Includes: Tap Cleaner & Toilet Cleaner. A quick, focused fix for hard water stains across the home.",
-            "save_label": "",
-            "flag": "",
-            "featured": false,
-            "cta_link": "#bundles",
-            "item_1_product": "tap-cleaner-limescale-remover",
-            "item_1_caption": "Melts hard water stains",
-            "item_2_product": "toilet-cleaner",
-            "item_2_caption": "Fights limescale in the bowl",
-            "item_3_product": "",
-            "item_3_caption": ""
-          }
-        }
-      },
-      "block_order": [
-        "combo_9rQDR6",
-        "combo_qYPGz6",
-        "combo_64JcNQ",
-        "combo_gdQVPc",
-        "combo_hw2Kit1"
-      ],
-      "settings": {
-        "color_scheme": "scheme-3",
-        "kicker": "Pre-built to save you money",
-        "heading": "Best selling combos",
-        "subtext": "Swipe through the boxes people order most. Each one is already priced below buying the same products on their own.",
-        "footnote": "Tapping \"Shop bundle\" opens the bundle picker with these products already added. You can still swap anything before you pay."
-      }
-    },
-    "bundles": {
-      "type": "bundles",
-      "blocks": {
-        "tier_h36XhL": {
-          "type": "tier",
-          "settings": {
-            "tag": "Starter",
-            "quantity": 2,
-            "product": "kitchen-cleaner-foaming",
-            "bullets": "Pick any two products\nFree shipping across India",
-            "featured": false,
-            "cta_label": "Build this box",
-            "cta_link": "#shop"
-          }
-        },
-        "tier_bcNY7p": {
-          "type": "tier",
-          "settings": {
-            "tag": "Most popular",
-            "quantity": 3,
-            "product": "copper-bronze-brass-cleaner-premium-value-pack",
-            "bullets": "Pick any three products\nCovers kitchen and laundry\nFree shipping across India",
-            "featured": true,
-            "cta_label": "Build this box",
-            "cta_link": "#shop"
-          }
-        },
-        "tier_4XePgh": {
-          "type": "tier",
-          "settings": {
-            "tag": "Whole home",
-            "quantity": 5,
-            "product": "purelane-plant-based-multi-surface-kitchen-bathroom-glass-ceramic-granite-marble-stainless-steel-cleaner-with-natural-citrus-extract-for-everyday-deep-cleaning-and-long-lasting-fresh-fragrance-1-litre-family-value-refill-pack",
-            "bullets": "Pick any five products\nEvery room in one order\nFree shipping across India",
-            "featured": false,
-            "cta_label": "Build this box",
-            "cta_link": "#shop"
-          }
-        }
-      },
-      "block_order": [
-        "tier_h36XhL",
-        "tier_bcNY7p",
-        "tier_4XePgh"
-      ],
-      "settings": {
-        "color_scheme": "scheme-3",
-        "kicker": "Build your bundle",
-        "heading": "One box. Every room.",
-        "subtext": "Mix and match across kitchen, laundry, home and skin. One flat price, no code needed, free shipping either way."
-      }
-    },
-    "product-grid": {
-      "type": "product-grid",
-      "settings": {
-        "color_scheme": "scheme-3",
-        "kicker": "Bestsellers",
-        "heading": "Loved by 30,000 homes",
-        "collection": "for grid",
-        "product_count": 8
-      }
-    },
     "ingredients_KzYJcX": {
       "type": "ingredients",
       "blocks": {
@@ -315,158 +179,6 @@
       "settings": {
         "color_scheme": "",
         "heading": "Sourced from nature"
-      }
-    },
-    "purelane_full_range_d3ePUt": {
-      "type": "purelane-full-range",
-      "blocks": {
-        "product_cFtHyz": {
-          "type": "product",
-          "settings": {
-            "title": "Floor cleaner",
-            "alt": "",
-            "link": ""
-          }
-        },
-        "product_qGyQDP": {
-          "type": "product",
-          "settings": {
-            "title": "Tap & limescale",
-            "alt": "",
-            "link": ""
-          }
-        },
-        "product_xgULy7": {
-          "type": "product",
-          "settings": {
-            "title": "Kitchen cleaner",
-            "alt": "",
-            "link": ""
-          }
-        },
-        "product_crBrd4": {
-          "type": "product",
-          "settings": {
-            "title": "Toilet cleaner",
-            "alt": "",
-            "link": ""
-          }
-        },
-        "product_hXFthE": {
-          "type": "product",
-          "settings": {
-            "title": "Laundry detergent",
-            "alt": "",
-            "link": ""
-          }
-        },
-        "product_TMfzpJ": {
-          "type": "product",
-          "settings": {
-            "title": "Dishwash gel",
-            "alt": "",
-            "link": ""
-          }
-        },
-        "product_Gr7dji": {
-          "type": "product",
-          "settings": {
-            "title": "Metal cleaner",
-            "alt": "",
-            "link": ""
-          }
-        },
-        "product_URTwjj": {
-          "type": "product",
-          "settings": {
-            "title": "Washing machine cleaner",
-            "alt": "",
-            "link": ""
-          }
-        },
-        "product_emt7pW": {
-          "type": "product",
-          "settings": {
-            "title": "Handwash",
-            "alt": "",
-            "link": ""
-          }
-        },
-        "product_yLRbar": {
-          "type": "product",
-          "settings": {
-            "title": "Magic eraser",
-            "alt": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "product_cFtHyz",
-        "product_qGyQDP",
-        "product_xgULy7",
-        "product_crBrd4",
-        "product_hXFthE",
-        "product_TMfzpJ",
-        "product_Gr7dji",
-        "product_URTwjj",
-        "product_emt7pW",
-        "product_yLRbar"
-      ],
-      "name": "Purelane Full Range",
-      "settings": {
-        "kicker": "The full range",
-        "heading": "Every room, one shelf",
-        "description": "Floors, taps, kitchen, laundry, bathroom and hands. Fourteen plant-based formulas that replace every harsh bottle under your sink.",
-        "swipe_text": "Swipe to see the full shelf"
-      }
-    },
-    "purelane_smarter_shopping_LkEdhp": {
-      "type": "purelane-smarter-shopping",
-      "blocks": {
-        "benefit_fVyCGE": {
-          "type": "benefit",
-          "settings": {
-            "icon": "save",
-            "title": "Save up to 45%",
-            "description": "Versus buying the same products separately"
-          }
-        },
-        "benefit_eGGjWi": {
-          "type": "benefit",
-          "settings": {
-            "icon": "flat",
-            "title": "One flat price",
-            "description": "No calculators, no comparing carts"
-          }
-        },
-        "benefit_KiMPRf": {
-          "type": "benefit",
-          "settings": {
-            "icon": "expert",
-            "title": "Curated by experts",
-            "description": "Products picked to work well together"
-          }
-        },
-        "benefit_EXjjkt": {
-          "type": "benefit",
-          "settings": {
-            "icon": "shipping",
-            "title": "Free shipping always",
-            "description": "Included on every bundle, all India"
-          }
-        }
-      },
-      "block_order": [
-        "benefit_fVyCGE",
-        "benefit_eGGjWi",
-        "benefit_KiMPRf",
-        "benefit_EXjjkt"
-      ],
-      "name": "Purelane Smarter Shopping",
-      "settings": {
-        "kicker": "The smarter way to shop",
-        "heading": "Why bundles beat buying single"
       }
     },
     "purelane_benefits_VPTCyQ": {
@@ -567,6 +279,240 @@
         "button_link": "",
         "product_name": "Toilet cleaner",
         "product_note": "Kills 99.9% of germs"
+      }
+    },
+    "combos": {
+      "type": "combos",
+      "blocks": {
+        "combo_9rQDR6": {
+          "type": "combo",
+          "settings": {
+            "title": "Kitchen essentials",
+            "product": "kitchen-essentials-combo",
+            "product_count_label": "3 products",
+            "includes": "Includes: Foaming Kitchen Cleaner, Dishwash Gel & Tap Cleaner. Everything for a sparkling kitchen, no need to pick separately.",
+            "save_label": "",
+            "flag": "Most popular",
+            "featured": false,
+            "cta_link": "#bundles",
+            "item_1_product": "kitchen-cleaner-foaming",
+            "item_1_caption": "Cuts grease instantly",
+            "item_2_product": "dishwash-gel",
+            "item_2_caption": "Squeaky clean dishes",
+            "item_3_product": "tap-cleaner-limescale-remover",
+            "item_3_caption": "Melts hard water stains"
+          }
+        },
+        "combo_qYPGz6": {
+          "type": "combo",
+          "settings": {
+            "title": "Laundry care bundle",
+            "product": "laundry-care-bundle-combo",
+            "product_count_label": "3 products",
+            "includes": "Includes: Laundry Detergent, Fabric Conditioner & Machine Cleaner Powder. Softer, fresher wash, all in one box.",
+            "save_label": "398",
+            "flag": "",
+            "featured": false,
+            "cta_link": "#bundles",
+            "item_1_product": "laundry-detergent",
+            "item_1_caption": "Removes tough stains & odour",
+            "item_2_product": "fabric-conditioner",
+            "item_2_caption": "Softens & freshens every wash",
+            "item_3_product": "machine-cleaner-powder",
+            "item_3_caption": "Deep-cleans your machine"
+          }
+        },
+        "combo_64JcNQ": {
+          "type": "combo",
+          "settings": {
+            "title": "Complete home bundle",
+            "product": "complete-home-bundle-combo",
+            "product_count_label": "5 products",
+            "includes": "Includes: Kitchen Cleaner, Laundry Detergent, Floor Cleaner, Toilet Cleaner & Handwash. Our biggest saving box.",
+            "save_label": "Biggest saving",
+            "flag": "Best value",
+            "featured": true,
+            "cta_link": "#bundles",
+            "item_1_product": "kitchen-cleaner-foaming",
+            "item_1_caption": "Cuts grease instantly",
+            "item_2_product": "floor-cleaner",
+            "item_2_caption": "Kills 99.9% germs",
+            "item_3_product": "liquid-handwash",
+            "item_3_caption": "Gentle hydration for hands"
+          }
+        },
+        "combo_gdQVPc": {
+          "type": "combo",
+          "settings": {
+            "title": "Bathroom deep clean",
+            "product": "bathroom-deep-clean-combo",
+            "product_count_label": "3 products",
+            "includes": "Includes: Toilet Cleaner, Tap Cleaner & Magic Eraser. A complete bathroom refresh in one box.",
+            "save_label": "",
+            "flag": "",
+            "featured": false,
+            "cta_link": "#bundles",
+            "item_1_product": "toilet-cleaner",
+            "item_1_caption": "Kills 99.9% germs",
+            "item_2_product": "tap-cleaner-limescale-remover",
+            "item_2_caption": "Melts hard water stains",
+            "item_3_product": "magic-eraser",
+            "item_3_caption": "Scrubs away soap scum"
+          }
+        },
+        "combo_hw2Kit1": {
+          "type": "combo",
+          "settings": {
+            "title": "Hard water solution kit",
+            "product": "hard-water-solution-kit-combo",
+            "product_count_label": "2 products",
+            "includes": "Includes: Tap Cleaner & Toilet Cleaner. A quick, focused fix for hard water stains across the home.",
+            "save_label": "",
+            "flag": "",
+            "featured": false,
+            "cta_link": "#bundles",
+            "item_1_product": "tap-cleaner-limescale-remover",
+            "item_1_caption": "Melts hard water stains",
+            "item_2_product": "toilet-cleaner",
+            "item_2_caption": "Fights limescale in the bowl",
+            "item_3_product": "",
+            "item_3_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "combo_9rQDR6",
+        "combo_qYPGz6",
+        "combo_64JcNQ",
+        "combo_gdQVPc",
+        "combo_hw2Kit1"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "kicker": "Pre-built to save you money",
+        "heading": "Best selling combos",
+        "subtext": "Swipe through the boxes people order most. Each one is already priced below buying the same products on their own.",
+        "footnote": "Tapping \"Shop bundle\" opens the bundle picker with these products already added. You can still swap anything before you pay."
+      }
+    },
+    "bundles": {
+      "type": "bundles",
+      "blocks": {
+        "tier_h36XhL": {
+          "type": "tier",
+          "settings": {
+            "tag": "Starter",
+            "quantity": 2,
+            "product": "any-2-product",
+            "bullets": "Pick any two products\nFree shipping across India",
+            "featured": false,
+            "cta_label": "Build this box",
+            "cta_link": "#shop"
+          }
+        },
+        "tier_bcNY7p": {
+          "type": "tier",
+          "settings": {
+            "tag": "Most popular",
+            "quantity": 3,
+            "product": "any-3-probuct",
+            "bullets": "Pick any three products\nCovers kitchen and laundry\nFree shipping across India",
+            "featured": true,
+            "cta_label": "Build this box",
+            "cta_link": "#shop"
+          }
+        },
+        "tier_4XePgh": {
+          "type": "tier",
+          "settings": {
+            "tag": "Whole home",
+            "quantity": 5,
+            "product": "purelane-plant-based-multi-surface-kitchen-bathroom-glass-ceramic-granite-marble-stainless-steel-cleaner-with-natural-citrus-extract-for-everyday-deep-cleaning-and-long-lasting-fresh-fragrance-1-litre-family-value-refill-pack",
+            "bullets": "Pick any five products\nEvery room in one order\nFree shipping across India",
+            "featured": false,
+            "cta_label": "Build this box",
+            "cta_link": "#shop"
+          }
+        }
+      },
+      "block_order": [
+        "tier_h36XhL",
+        "tier_bcNY7p",
+        "tier_4XePgh"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "kicker": "Build your bundle",
+        "heading": "One box. Every room.",
+        "subtext": "Mix and match across kitchen, laundry, home and skin. One flat price, no code needed, free shipping either way."
+      }
+    },
+    "product-grid": {
+      "type": "product-grid",
+      "settings": {
+        "color_scheme": "scheme-3",
+        "kicker": "Bestsellers",
+        "heading": "Loved by 30,000 homes",
+        "collection": "for-grid",
+        "product_count": 8
+      }
+    },
+    "purelane_full_range_d3ePUt": {
+      "type": "purelane-full-range",
+      "name": "Purelane Full Range",
+      "settings": {
+        "kicker": "The full range",
+        "heading": "Every room, one shelf",
+        "description": "Floors, taps, kitchen, laundry, bathroom and hands. Fourteen plant-based formulas that replace every harsh bottle under your sink.",
+        "swipe_text": "Swipe to see the full shelf"
+      }
+    },
+    "purelane_smarter_shopping_LkEdhp": {
+      "type": "purelane-smarter-shopping",
+      "blocks": {
+        "benefit_fVyCGE": {
+          "type": "benefit",
+          "settings": {
+            "icon": "save",
+            "title": "Save up to 45%",
+            "description": "Versus buying the same products separately"
+          }
+        },
+        "benefit_eGGjWi": {
+          "type": "benefit",
+          "settings": {
+            "icon": "flat",
+            "title": "One flat price",
+            "description": "No calculators, no comparing carts"
+          }
+        },
+        "benefit_KiMPRf": {
+          "type": "benefit",
+          "settings": {
+            "icon": "expert",
+            "title": "Curated by experts",
+            "description": "Products picked to work well together"
+          }
+        },
+        "benefit_EXjjkt": {
+          "type": "benefit",
+          "settings": {
+            "icon": "shipping",
+            "title": "Free shipping always",
+            "description": "Included on every bundle, all India"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_fVyCGE",
+        "benefit_eGGjWi",
+        "benefit_KiMPRf",
+        "benefit_EXjjkt"
+      ],
+      "name": "Purelane Smarter Shopping",
+      "settings": {
+        "kicker": "The smarter way to shop",
+        "heading": "Why bundles beat buying single"
       }
     }
   },

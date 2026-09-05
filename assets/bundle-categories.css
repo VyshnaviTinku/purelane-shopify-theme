@@ -1,320 +1,648 @@
 /* =========================================================
-   PURELANE — BUNDLE CATEGORIES
+   PURELANE BUNDLE CATEGORIES
+   No Shopify image picker required
    ========================================================= */
 
-.pl-bundle-categories {
+
+/* ---------------------------------------------------------
+   SECTION BACKGROUND
+   Matches the mint / green Purelane scene
+   --------------------------------------------------------- */
+
+.pl-bundle-section {
+
   position: relative;
-  padding: var(--sec-y, 32px) 0;
+
+  width: 100%;
+
+  padding: 42px 0 34px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      178deg,
+      #e9f8ec 0%,
+      #cdedd6 30%,
+      #addcbe 62%,
+      #8ecdaa 100%
+    );
+
 }
+
+
+/* subtle flowing background */
+
+.pl-bundle-section::before {
+
+  content: "";
+
+  position: absolute;
+
+  left: -10%;
+  right: -10%;
+
+  top: 38%;
+
+  height: 180px;
+
+  pointer-events: none;
+
+  opacity: .42;
+
+  background:
+    radial-gradient(
+      ellipse at 30% 50%,
+      rgba(255,255,255,.40),
+      transparent 58%
+    ),
+    radial-gradient(
+      ellipse at 75% 50%,
+      rgba(255,255,255,.28),
+      transparent 60%
+    );
+
+  transform: rotate(-2deg);
+
+}
+
+
+/* ---------------------------------------------------------
+   WRAPPER
+   --------------------------------------------------------- */
 
 .pl-bundle-wrap {
-  max-width: var(--maxw, 1240px);
+
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1180px, calc(100% - 28px));
+
   margin: 0 auto;
-  padding: 0 18px;
+
 }
 
 
-/* =========================================================
-   HEADER
-   ========================================================= */
+/* ---------------------------------------------------------
+   HEADING
+   --------------------------------------------------------- */
 
 .pl-bundle-head {
-  margin-bottom: 24px;
+
+  text-align: center;
+
+  margin-bottom: 18px;
+
 }
 
-.pl-bundle-title {
-  margin: 12px 0 0;
 
-  max-width: 20ch;
+.pl-kicker {
 
-  font-family: 'Outfit', system-ui, sans-serif;
-  font-size: clamp(30px, 4.6vw, 54px);
-  font-weight: 800;
-  line-height: 0.94;
-  letter-spacing: -0.018em;
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: rgba(47, 61, 48, .62);
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: .22em;
+
   text-transform: uppercase;
 
-  color: var(--surface, #17102b);
 }
 
 
-/* =========================================================
-   GRID
-   ========================================================= */
+.pl-bundle-title {
+
+  margin: 0;
+
+  color: #171025;
+
+  font-family:
+    'Outfit',
+    system-ui,
+    -apple-system,
+    sans-serif;
+
+  font-size: clamp(30px, 4.5vw, 50px);
+
+  font-weight: 800;
+
+  line-height: .95;
+
+  letter-spacing: -.025em;
+
+  text-transform: uppercase;
+
+}
+
+
+/* ---------------------------------------------------------
+   BUNDLE GRID
+   --------------------------------------------------------- */
 
 .pl-bundle-grid {
+
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 12px;
+
 }
 
 
-/* =========================================================
-   CARD
-   ========================================================= */
+/* ---------------------------------------------------------
+   GLASS CARD
+   --------------------------------------------------------- */
 
 .pl-bundle-card {
+
+  position: relative;
+
   display: flex;
+
   flex-direction: column;
 
   min-width: 0;
 
   overflow: hidden;
 
-  padding: 0;
+  text-decoration: none;
 
-  border-radius: 20px;
+  border-radius: 17px;
+
+  border: 1px solid rgba(255,255,255,.72);
 
   background:
     linear-gradient(
       145deg,
-      rgba(255, 255, 255, 0.76),
-      rgba(236, 230, 247, 0.48)
+      rgba(255,255,255,.72),
+      rgba(231,246,237,.58)
     );
 
-  border: 1px solid rgba(75, 58, 143, 0.13);
-
   box-shadow:
-    0 16px 40px rgba(58, 44, 112, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+    0 14px 34px rgba(55, 95, 72, .14),
+    inset 0 1px 0 rgba(255,255,255,.90);
 
-  text-decoration: none;
-  color: inherit;
+  backdrop-filter:
+    blur(20px)
+    saturate(135%);
+
+  -webkit-backdrop-filter:
+    blur(20px)
+    saturate(135%);
 
   transition:
-    transform 0.4s ease,
-    box-shadow 0.4s ease;
+    transform .3s ease,
+    box-shadow .3s ease;
+
 }
+
 
 .pl-bundle-card:hover {
-  transform: translateY(-5px);
+
+  transform: translateY(-4px);
 
   box-shadow:
-    0 24px 50px rgba(58, 44, 112, 0.13),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    0 20px 42px rgba(55, 95, 72, .20),
+    inset 0 1px 0 rgba(255,255,255,.95);
+
 }
 
 
-/* =========================================================
-   IMAGE AREA
-   ========================================================= */
+/* ---------------------------------------------------------
+   BOTTLE AREA
+   --------------------------------------------------------- */
 
 .pl-bundle-image {
+
   position: relative;
 
-  height: 194px;
+  height: 122px;
 
   display: flex;
+
   align-items: flex-end;
+
   justify-content: center;
 
-  padding: 14px 12px 0;
+  padding: 8px 10px 0;
 
   overflow: hidden;
+
 }
 
+
 .pl-bundle-image::before {
-  content: '';
+
+  content: "";
 
   position: absolute;
+
   inset: 0;
 
   background:
     radial-gradient(
       110% 80% at 50% 6%,
-      rgba(236, 230, 247, 0.30),
-      rgba(75, 58, 143, 0.08) 56%,
+      rgba(236,230,247,.32),
+      rgba(75,58,143,.08) 56%,
       transparent 78%
     );
+
 }
 
-.pl-bundle-product-image {
+
+/* ---------------------------------------------------------
+   BOTTLE
+   --------------------------------------------------------- */
+
+.pl-bottle {
+
   position: relative;
-  z-index: 1;
+
+  z-index: 2;
 
   display: block;
 
-  width: auto;
-  max-width: 82%;
-  height: 170px;
+  width: 84px;
 
-  object-fit: contain;
+  height: 112px;
+
+  flex: 0 0 auto;
+
+  background-repeat: no-repeat;
+
+  background-position: center bottom;
+
+  background-size: contain;
 
   filter:
-    drop-shadow(0 10px 15px rgba(0, 74, 66, 0.14));
+    drop-shadow(
+      0 12px 18px rgba(1,24,22,.32)
+    );
 
-  transition: transform 0.4s ease;
-}
-
-.pl-bundle-card:hover .pl-bundle-product-image {
-  transform: translateY(-4px);
 }
 
 
-/* =========================================================
-   PLACEHOLDER
-   ========================================================= */
+/* ---------------------------------------------------------
+   EXACT BOTTLES FROM PURELANE HTML
+   --------------------------------------------------------- */
 
-.pl-bundle-placeholder {
-  position: relative;
-  z-index: 1;
 
-  width: 80px;
-  height: 140px;
+/* KITCHEN */
 
-  display: grid;
-  place-items: center;
+.pl-kitchen {
 
-  border: 1px dashed rgba(75, 58, 143, 0.22);
-  border-radius: 14px;
+  background-image:
+    url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODAgNTk1IiB3aWR0aD0iMzgwIiBoZWlnaHQ9IjU5NSI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgo8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM2YjU1YjgiIHN0b3Atb3BhY2l0eT0iLjk1Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNmI1NWI4IiBzdG9wLW9wYWNpdHk9Ii42MiIvPgo8L2xpbmVhckdyYWRpZW50PjwvZGVmcz4KPHJlY3QgeD0iMTQ5LjkiIHk9IjAiIHdpZHRoPSI4MC4xIiBoZWlnaHQ9IjU5LjUiIHJ4PSIxNy42IiBmaWxsPSIjNmI1NWI4IiBvcGFjaXR5PSIuODUiLz4KPHJlY3QgeD0iMTYxLjIiIHk9IjUzLjYiIHdpZHRoPSI1Ny43IiBoZWlnaHQ9IjQxLjciIGZpbGw9IiM2YjU1YjgiIG9wYWNpdHk9Ii43Ii8+CjxyZWN0IHg9IjcyLjIiIHk9IjExOS4wIiB3aWR0aD0iMjM1LjYiIGhlaWdodD0iNDc2LjAiIHJ4PSIzNy43IiBmaWxsPSJ1cmwoI2cpIi8+CjxyZWN0IHg9IjEwMC41IiB5PSIyNjEuOCIgd2lkdGg9IjE3OS4xIiBoZWlnaHQ9IjE2MS44IiByeD0iMTEuOCIgZmlsbD0iI2ZhZjdmZCIgb3BhY2l0eT0iLjg4Ii8+CjxyZWN0IHg9IjEyOC43IiB5PSIzMDkuNCIgd2lkdGg9IjEyMi41IiBoZWlnaHQ9IjIxLjQiIHJ4PSIyIiBmaWxsPSIjNmI1NWI4IiBvcGFjaXR5PSIuNTUiLz4KPHJlY3QgeD0iMTQyLjkiIHk9IjM1Mi4yIiB3aWR0aD0iOTQuMiIgaGVpZ2h0PSIxNi43IiByeD0iMiIgZmlsbD0iIzZiNTViOCIgb3BhY2l0eT0iLjM1Ii8+Cjwvc3ZnPg==");
 
-  font-size: 9px;
-
-  color: rgba(36, 26, 61, 0.45);
 }
 
 
-/* =========================================================
-   CONTENT
-   ========================================================= */
+/* TOILET */
+
+.pl-toilet {
+
+  background-image:
+    url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODAgNjE5IiB3aWR0aD0iMzgwIiBoZWlnaHQ9IjYxOSI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgo8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM3YTYyYzIiIHN0b3Atb3BhY2l0eT0iLjk1Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjN2E2MmMyIiBzdG9wLW9wYWNpdHk9Ii42MiIvPgo8L2xpbmVhckdyYWRpZW50PjwvZGVmcz4KPHJlY3QgeD0iMTQ5LjkiIHk9IjAiIHdpZHRoPSI4MC4xIiBoZWlnaHQ9IjYxLjkiIHJ4PSIxNy42IiBmaWxsPSIjN2E2MmMyIiBvcGFjaXR5PSIuODUiLz4KPHJlY3QgeD0iMTYxLjIiIHk9IjU1LjciIHdpZHRoPSI1Ny43IiBoZWlnaHQ9IjQzLjMiIGZpbGw9IiM3YTYyYzIiIG9wYWNpdHk9Ii43Ii8+CjxyZWN0IHg9IjcyLjIiIHk9IjEyMy44IiB3aWR0aD0iMjM1LjYiIGhlaWdodD0iNDk1LjIiIHJ4PSIzNy43IiBmaWxsPSJ1cmwoI2cpIi8+CjxyZWN0IHg9IjEwMC41IiB5PSIyNzIuNCIgd2lkdGg9IjE3OS4xIiBoZWlnaHQ9IjE2OC40IiByeD0iMTEuOCIgZmlsbD0iI2ZhZjdmZCIgb3BhY2l0eT0iLjg4Ii8+CjxyZWN0IHg9IjEyOC43IiB5PSIzMjEuOSIgd2lkdGg9IjEyMi41IiBoZWlnaHQ9IjIyLjMiIHJ4PSIyIiBmaWxsPSIjN2E2MmMyIiBvcGFjaXR5PSIuNTUiLz4KPHJlY3QgeD0iMTQyLjkiIHk9IjM2Ni40IiB3aWR0aD0iOTQuMiIgaGVpZ2h0PSIxNy4zIiByeD0iMiIgZmlsbD0iIzdhNjJjMiIgb3BhY2l0eT0iLjM1Ii8+Cjwvc3ZnPg==");
+
+}
+
+
+/* LAUNDRY */
+
+.pl-laundry {
+
+  background-image:
+    url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODAgNjAzIiB3aWR0aD0iMzgwIiBoZWlnaHQ9IjYwMyI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgo8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM1YTQ2YTMiIHN0b3Atb3BhY2l0eT0iLjk1Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNWE0NmEzIiBzdG9wLW9wYWNpdHk9Ii42MiIvPgo8L2xpbmVhckdyYWRpZW50PjwvZGVmcz4KPHJlY3QgeD0iMTQ5LjkiIHk9IjAiIHdpZHRoPSI4MC4xIiBoZWlnaHQ9IjYwLjMiIHJ4PSIxNy42IiBmaWxsPSIjNWE0NmEzIiBvcGFjaXR5PSIuODUiLz4KPHJlY3QgeD0iMTYxLjIiIHk9IjU0LjMiIHdpZHRoPSI1Ny43IiBoZWlnaHQ9IjQyLjIiIGZpbGw9IiM1YTQ2YTMiIG9wYWNpdHk9Ii43Ii8+CjxyZWN0IHg9IjcyLjIiIHk9IjEyMC42IiB3aWR0aD0iMjM1LjYiIGhlaWdodD0iNDgyLjQiIHJ4PSIzNy43IiBmaWxsPSJ1cmwoI2cpIi8+CjxyZWN0IHg9IjEwMC41IiB5PSIyNjUuMyIgd2lkdGg9IjE3OS4xIiBoZWlnaHQ9IjE2NC4wIiByeD0iMTEuOCIgZmlsbD0iI2ZhZjdmZCIgb3BhY2l0eT0iLjg4Ii8+CjxyZWN0IHg9IjEyOC43IiB5PSIzMTMuNiIgd2lkdGg9IjEyMi41IiBoZWlnaHQ9IjIxLjciIHJ4PSIyIiBmaWxsPSIjNWE0NmEzIiBvcGFjaXR5PSIuNTUiLz4KPHJlY3QgeD0iMTQyLjkiIHk9IjM1Ny4wIiB3aWR0aD0iOTQuMiIgaGVpZ2h0PSIxNi45IiByeD0iMiIgZmlsbD0iIzVhNDZhMyIgb3BhY2l0eT0iLjM1Ii8+Cjwvc3ZnPg==");
+
+}
+
+
+/* TAP / HARD WATER */
+
+.pl-tap {
+
+  background-image:
+    url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODAgNTk1IiB3aWR0aD0iMzgwIiBoZWlnaHQ9IjU5NSI+CjxkZWZzPjxsaW5lYXJHcmFkaWVlbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM2MjUwYWQiIHN0b3Atb3BhY2l0eT0iLjk1Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNjI1MGFkIiBzdG9wLW9wYWNpdHk9Ii42MiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjE0OS45IiB5PSIwIiB3aWR0aD0iODAuMSIgaGVpZ2h0PSI1OS41IiByeD0iMTcuNiIgZmlsbD0iIzYyNTBhZCIgb3BhY2l0eT0iLjg1Ii8+PHJlY3QgeD0iMTYxLjIiIHk9IjUzLjYiIHdpZHRoPSI1Ny43IiBoZWlnaHQ9IjQxLjciIGZpbGw9IiM2MjUwYWQiIG9wYWNpdHk9Ii43Ii8+PHJlY3QgeD0iNzIuMiIgeT0iMTE5LjAiIHdpZHRoPSIyMzUuNiIgaGVpZ2h0PSI0NzYuMCIgcng9IjM3LjciIGZpbGw9InVybCgjZykiLz48cmVjdCB4PSIxMDAuNSIgeT0iMjYxLjgiIHdpZHRoPSIxNzkuMSIgaGVpZ2h0PSIxNjEuOCIgcng9IjExLjgiIGZpbGw9IiNmYWY3ZmQiIG9wYWNpdHk9Ii44OCIvPjxyZWN0IHg9IjEyOC43IiB5PSIzMDkuNCIgd2lkdGg9IjEyMi41IiBoZWlnaHQ9IjIxLjQiIHJ4PSIyIiBmaWxsPSIjNjI1MGFkIiBvcGFjaXR5PSIuNTUiLz48cmVjdCB4PSIxNDIuOSIgeT0iMzUyLjIiIHdpZHRoPSI5NC4yIiBoZWlnaHQ9IjE2LjciIHJ4PSIyIiBmaWxsPSIjNjI1MGFkIiBvcGFjaXR5PSIuMzUiLz48L3N2Zz4=");
+
+}
+
+
+/* ---------------------------------------------------------
+   CARD TEXT
+   --------------------------------------------------------- */
 
 .pl-bundle-content {
-  padding: 15px 16px 18px;
+
+  padding: 10px 11px 13px;
+
+  border-top:
+    1px solid rgba(255,255,255,.45);
+
 }
+
 
 .pl-bundle-card-title {
-  margin: 0 0 6px;
 
-  font-family: 'Outfit', system-ui, sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: 0.025em;
-  text-transform: uppercase;
+  margin: 0 0 3px;
 
-  color: var(--surface, #17102b);
-}
+  color: #20202d;
 
-.pl-bundle-card-description {
-  margin: 0;
-
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: 12.2px;
-  line-height: 1.5;
-
-  color: var(
-    --paper-2,
-    rgba(36, 26, 61, 0.76)
-  );
-}
-
-
-/* =========================================================
-   SHOP LINK
-   ========================================================= */
-
-.pl-bundle-arrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-
-  margin-top: 11px;
+  font-family:
+    'Outfit',
+    system-ui,
+    sans-serif;
 
   font-size: 10px;
+
   font-weight: 700;
-  letter-spacing: 0.10em;
+
+  line-height: 1.2;
+
+  letter-spacing: .03em;
+
   text-transform: uppercase;
 
-  color: #4f7d10;
-}
-
-.pl-bundle-arrow span {
-  font-size: 14px;
-
-  transition: transform 0.25s ease;
-}
-
-.pl-bundle-card:hover .pl-bundle-arrow span {
-  transform: translateX(4px);
 }
 
 
-/* =========================================================
-   DESKTOP
-   ========================================================= */
+.pl-bundle-card-description {
 
-@media (min-width: 900px) {
+  margin: 0;
+
+  color: rgba(65,70,74,.65);
+
+  font-size: 8px;
+
+  line-height: 1.35;
+
+}
+
+
+/* ---------------------------------------------------------
+   TRUST BAR
+   Exact SVG icons from homepage HTML
+   --------------------------------------------------------- */
+
+.pl-trust-bar {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 4px;
+
+  margin-top: 42px;
+
+  padding: 6px;
+
+  border:
+    1px solid rgba(255,255,255,.70);
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.64),
+      rgba(226,244,233,.52)
+    );
+
+  box-shadow:
+    0 12px 30px rgba(54,93,70,.10),
+    inset 0 1px 0 rgba(255,255,255,.90);
+
+  backdrop-filter:
+    blur(20px)
+    saturate(140%);
+
+  -webkit-backdrop-filter:
+    blur(20px)
+    saturate(140%);
+
+}
+
+
+.pl-trust-item {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 11px 12px;
+
+}
+
+
+.pl-trust-item svg {
+
+  width: 19px;
+
+  height: 19px;
+
+  flex: 0 0 auto;
+
+  color: #6c9622;
+
+}
+
+
+.pl-trust-item span {
+
+  color: rgba(47,57,48,.68);
+
+  font-family:
+    'Outfit',
+    system-ui,
+    sans-serif;
+
+  font-size: 7.5px;
+
+  font-weight: 700;
+
+  line-height: 1.35;
+
+  letter-spacing: .11em;
+
+  text-transform: uppercase;
+
+}
+
+
+/* ---------------------------------------------------------
+   TABLET
+   --------------------------------------------------------- */
+
+@media (max-width: 899px) {
 
   .pl-bundle-grid {
-    grid-template-columns: repeat(4, 1fr);
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
   }
 
-  .pl-bundle-card-title {
-    font-size: 13.5px;
+  .pl-bundle-image {
+
+    height: 150px;
+
+  }
+
+  .pl-bottle {
+
+    height: 136px;
+
   }
 
 }
 
 
-/* =========================================================
+/* ---------------------------------------------------------
    MOBILE
-   ========================================================= */
+   --------------------------------------------------------- */
 
-@media (max-width: 760px) {
+@media (max-width: 600px) {
 
-  .pl-bundle-categories {
-    padding: 22px 0;
+  .pl-bundle-section {
+
+    padding: 30px 0 26px;
+
   }
 
-  .pl-bundle-head {
-    margin-bottom: 18px;
+  .pl-bundle-wrap {
+
+    width:
+      calc(100% - 20px);
+
   }
 
   .pl-bundle-title {
-    font-size: clamp(30px, 8vw, 42px);
+
+    font-size:
+      clamp(27px, 8.5vw, 40px);
+
+  }
+
+  .pl-bundle-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 9px;
+
+  }
+
+  .pl-bundle-card {
+
+    border-radius: 15px;
+
   }
 
   .pl-bundle-image {
-    height: 155px;
+
+    height: 126px;
+
   }
 
-  .pl-bundle-product-image {
-    height: 135px;
+  .pl-bottle {
+
+    width: 70px;
+
+    height: 112px;
+
   }
 
   .pl-bundle-content {
-    padding: 13px 13px 16px;
+
+    padding: 9px 9px 11px;
+
+  }
+
+  .pl-bundle-card-title {
+
+    font-size: 8.5px;
+
+  }
+
+  .pl-bundle-card-description {
+
+    font-size: 7px;
+
+  }
+
+
+  /* Trust bar becomes two columns */
+
+  .pl-trust-bar {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    margin-top: 28px;
+
+    border-radius: 15px;
+
+  }
+
+  .pl-trust-item {
+
+    gap: 7px;
+
+    padding: 9px 8px;
+
+  }
+
+  .pl-trust-item svg {
+
+    width: 16px;
+
+    height: 16px;
+
+  }
+
+  .pl-trust-item span {
+
+    font-size: 6.8px;
+
   }
 
 }
 
 
-/* =========================================================
-   SMALL MOBILE
-   ========================================================= */
+/* ---------------------------------------------------------
+   VERY SMALL PHONES
+   --------------------------------------------------------- */
 
-@media (max-width: 420px) {
-
-  .pl-bundle-grid {
-    gap: 10px;
-  }
+@media (max-width: 380px) {
 
   .pl-bundle-image {
-    height: 140px;
-    padding-left: 8px;
-    padding-right: 8px;
+
+    height: 112px;
+
   }
 
-  .pl-bundle-product-image {
-    height: 122px;
+  .pl-bottle {
+
+    width: 64px;
+
+    height: 100px;
+
   }
 
-  .pl-bundle-card-title {
-    font-size: 12px;
-  }
+  .pl-trust-item {
 
-  .pl-bundle-card-description {
-    font-size: 11px;
+    padding: 8px 6px;
+
   }
 
 }

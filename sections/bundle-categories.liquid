@@ -2,9 +2,12 @@
 
 <section
   id="bundle-categories-{{ section.id }}"
-  class="pl-bundle-categories"
+  class="pl-bundle-section"
 >
+
   <div class="pl-bundle-wrap">
+
+    <!-- ================= BUNDLE CATEGORIES ================= -->
 
     <div class="pl-bundle-head">
 
@@ -23,91 +26,239 @@
     </div>
 
 
-    {% if section.blocks.size > 0 %}
-
-      <div class="pl-bundle-grid">
-
-        {% for block in section.blocks %}
-
-          {% assign block_link = block.settings.link %}
-
-          {% if block_link != blank %}
-            <a
-              href="{{ block_link }}"
-              class="pl-bundle-card"
-              {{ block.shopify_attributes }}
-            >
-          {% else %}
-            <div
-              class="pl-bundle-card"
-              {{ block.shopify_attributes }}
-            >
-          {% endif %}
+    <div class="pl-bundle-grid">
 
 
-            <div class="pl-bundle-image">
+      <!-- KITCHEN -->
+      <a
+        href="{{ section.settings.kitchen_link | default: '#combos' }}"
+        class="pl-bundle-card"
+      >
 
-              {% if block.settings.image != blank %}
+        <div class="pl-bundle-image">
 
-                {{
-                  block.settings.image
-                  | image_url: width: 700
-                  | image_tag:
-                    loading: 'lazy',
-                    widths: '300, 450, 600, 700',
-                    sizes: '(max-width: 899px) 50vw, 25vw',
-                    class: 'pl-bundle-product-image',
-                    alt: block.settings.image_alt | default: block.settings.title
-                }}
+          <span
+            class="pl-bottle pl-kitchen"
+            role="img"
+            aria-label="Purelane foaming kitchen cleaner"
+          ></span>
 
-              {% else %}
+        </div>
 
-                <div class="pl-bundle-placeholder">
-                  <span>Product image</span>
-                </div>
+        <div class="pl-bundle-content">
 
-              {% endif %}
+          <h3 class="pl-bundle-card-title">
+            Kitchen bundle
+          </h3>
 
-            </div>
+          <p class="pl-bundle-card-description">
+            Grease, dishes &amp; more
+          </p>
 
+        </div>
 
-            <div class="pl-bundle-content">
-
-              {% if block.settings.title != blank %}
-                <h3 class="pl-bundle-card-title">
-                  {{ block.settings.title }}
-                </h3>
-              {% endif %}
-
-              {% if block.settings.description != blank %}
-                <p class="pl-bundle-card-description">
-                  {{ block.settings.description }}
-                </p>
-              {% endif %}
-
-              {% if block.settings.link_text != blank and block_link != blank %}
-                <span class="pl-bundle-arrow">
-                  {{ block.settings.link_text }}
-                  <span aria-hidden="true">→</span>
-                </span>
-              {% endif %}
-
-            </div>
+      </a>
 
 
-          {% if block_link != blank %}
-            </a>
-          {% else %}
-            </div>
-          {% endif %}
+      <!-- BATHROOM -->
+      <a
+        href="{{ section.settings.bathroom_link | default: '#combos' }}"
+        class="pl-bundle-card"
+      >
 
-        {% endfor %}
+        <div class="pl-bundle-image">
+
+          <span
+            class="pl-bottle pl-toilet"
+            role="img"
+            aria-label="Purelane non-toxic toilet cleaner"
+          ></span>
+
+        </div>
+
+        <div class="pl-bundle-content">
+
+          <h3 class="pl-bundle-card-title">
+            Bathroom bundle
+          </h3>
+
+          <p class="pl-bundle-card-description">
+            Deep clean &amp; disinfect
+          </p>
+
+        </div>
+
+      </a>
+
+
+      <!-- LAUNDRY -->
+      <a
+        href="{{ section.settings.laundry_link | default: '#combos' }}"
+        class="pl-bundle-card"
+      >
+
+        <div class="pl-bundle-image">
+
+          <span
+            class="pl-bottle pl-laundry"
+            role="img"
+            aria-label="Purelane non-toxic laundry detergent"
+          ></span>
+
+        </div>
+
+        <div class="pl-bundle-content">
+
+          <h3 class="pl-bundle-card-title">
+            Laundry bundle
+          </h3>
+
+          <p class="pl-bundle-card-description">
+            Softer, fresher wash
+          </p>
+
+        </div>
+
+      </a>
+
+
+      <!-- HARD WATER -->
+      <a
+        href="{{ section.settings.hard_water_link | default: '#combos' }}"
+        class="pl-bundle-card"
+      >
+
+        <div class="pl-bundle-image">
+
+          <span
+            class="pl-bottle pl-tap"
+            role="img"
+            aria-label="Purelane tap cleaner and limescale remover"
+          ></span>
+
+        </div>
+
+        <div class="pl-bundle-content">
+
+          <h3 class="pl-bundle-card-title">
+            Hard water bundle
+          </h3>
+
+          <p class="pl-bundle-card-description">
+            Melt away limescale
+          </p>
+
+        </div>
+
+      </a>
+
+    </div>
+
+
+
+    <!-- ================= TRUST BAR ================= -->
+
+    <div class="pl-trust-bar">
+
+
+      <!-- PLANT DERIVED -->
+      <div class="pl-trust-item">
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M12 21c0-6.5 3.5-11 8-12.5C20 15 16.5 20 12 21Z"/>
+          <path d="M12 21C12 14.5 8.5 10 4 8.5 4 15 7.5 20 12 21Z"/>
+        </svg>
+
+        <span>
+          Plant derived<br>
+          formulas
+        </span>
 
       </div>
 
-    {% endif %}
+
+      <!-- RECYCLABLE -->
+      <div class="pl-trust-item">
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M4 8h16v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/>
+          <path d="M4 8 6.5 3h11L20 8M9.5 12h5"/>
+        </svg>
+
+        <span>
+          Recyclable<br>
+          packaging
+        </span>
+
+      </div>
+
+
+      <!-- SAFE FOR KIDS & PETS -->
+      <div class="pl-trust-item">
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M12 20s-7-4.4-7-9.4A4.1 4.1 0 0 1 12 8a4.1 4.1 0 0 1 7 2.6c0 5-7 9.4-7 9.4Z"/>
+        </svg>
+
+        <span>
+          Safe for<br>
+          kids &amp; pets
+        </span>
+
+      </div>
+
+
+      <!-- MADE IN INDIA -->
+      <div class="pl-trust-item">
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="8.6"/>
+          <path d="M3.4 12h17.2M12 3.4c2.4 2.4 3.6 5.4 3.6 8.6S14.4 18.2 12 20.6c-2.4-2.4-3.6-5.4-3.6-8.6S9.6 5.8 12 3.4Z"/>
+        </svg>
+
+        <span>
+          Made in<br>
+          India
+        </span>
+
+      </div>
+
+    </div>
 
   </div>
+
 </section>
 
 
@@ -116,6 +267,7 @@
   "name": "Bundle Categories",
   "tag": "section",
   "class": "purelane-bundle-categories",
+
   "settings": [
     {
       "type": "text",
@@ -130,21 +282,12 @@
       "default": "Find the right bundle for you"
     }
   ],
+
   "blocks": [
     {
-      "type": "category",
+      "type": "product",
       "name": "Bundle category",
       "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Product image"
-        },
-        {
-          "type": "text",
-          "id": "image_alt",
-          "label": "Image alt text"
-        },
         {
           "type": "text",
           "id": "title",
@@ -158,54 +301,46 @@
           "default": "Grease, dishes & more"
         },
         {
-          "type": "text",
-          "id": "link_text",
-          "label": "Link text",
-          "default": "Shop bundle"
-        },
-        {
           "type": "url",
           "id": "link",
-          "label": "Link"
+          "label": "Bundle link"
         }
       ]
     }
   ],
+
   "max_blocks": 4,
+
   "presets": [
     {
       "name": "Bundle Categories",
       "blocks": [
         {
-          "type": "category",
+          "type": "product",
           "settings": {
             "title": "Kitchen bundle",
-            "description": "Grease, dishes & more",
-            "link_text": "Shop bundle"
+            "description": "Grease, dishes & more"
           }
         },
         {
-          "type": "category",
+          "type": "product",
           "settings": {
             "title": "Bathroom bundle",
-            "description": "Deep clean & disinfect",
-            "link_text": "Shop bundle"
+            "description": "Deep clean & disinfect"
           }
         },
         {
-          "type": "category",
+          "type": "product",
           "settings": {
             "title": "Laundry bundle",
-            "description": "Softer, fresher wash",
-            "link_text": "Shop bundle"
+            "description": "Softer, fresher wash"
           }
         },
         {
-          "type": "category",
+          "type": "product",
           "settings": {
             "title": "Hard water bundle",
-            "description": "Melt away limescale",
-            "link_text": "Shop bundle"
+            "description": "Melt away limescale"
           }
         }
       ]

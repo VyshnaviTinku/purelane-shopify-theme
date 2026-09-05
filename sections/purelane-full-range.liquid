@@ -5,15 +5,19 @@
   class="pl-range-section"
   data-section-id="{{ section.id }}"
 >
+
   <div class="pl-range-wrap">
 
     <div class="pl-range-panel">
 
+      <!-- ================= HEADER ================= -->
+
       <div class="pl-range-head">
 
         <div class="pl-range-heading">
+
           {% if section.settings.kicker != blank %}
-            <span class="pl-kicker">
+            <span class="pl-range-kicker">
               {{ section.settings.kicker }}
             </span>
           {% endif %}
@@ -23,7 +27,9 @@
               {{ section.settings.heading }}
             </h2>
           {% endif %}
+
         </div>
+
 
         {% if section.settings.description != blank %}
           <p class="pl-range-description">
@@ -34,80 +40,143 @@
       </div>
 
 
-      {% if section.blocks.size > 0 %}
+      <!-- ================= PRODUCT SHELF ================= -->
 
-        <div class="pl-range-strip-wrap">
+      <div class="pl-range-strip-wrap">
 
+        <div
+          class="pl-range-row"
+          role="list"
+          aria-label="{{ section.settings.heading | escape }}"
+        >
+
+          <!-- FLOOR -->
+          <div class="pl-range-product" role="listitem">
+            <span
+              class="pl-range-bottle pl-floor"
+              role="img"
+              aria-label="Purelane natural herbal floor cleaner"
+            ></span>
+          </div>
+
+
+          <!-- TAP -->
+          <div class="pl-range-product" role="listitem">
+            <span
+              class="pl-range-bottle pl-tap"
+              role="img"
+              aria-label="Purelane tap cleaner and limescale remover"
+            ></span>
+          </div>
+
+
+          <!-- KITCHEN -->
+          <div class="pl-range-product" role="listitem">
+            <span
+              class="pl-range-bottle pl-kitchen"
+              role="img"
+              aria-label="Purelane foaming kitchen cleaner"
+            ></span>
+          </div>
+
+
+          <!-- TOILET -->
+          <div class="pl-range-product" role="listitem">
+            <span
+              class="pl-range-bottle pl-toilet"
+              role="img"
+              aria-label="Purelane non-toxic toilet cleaner"
+            ></span>
+          </div>
+
+
+          <!-- LAUNDRY -->
+          <div class="pl-range-product" role="listitem">
+            <span
+              class="pl-range-bottle pl-laundry"
+              role="img"
+              aria-label="Purelane natural laundry detergent"
+            ></span>
+          </div>
+
+
+          <!-- DISHWASH -->
+          <div class="pl-range-product" role="listitem">
+            <span
+              class="pl-range-bottle pl-dish"
+              role="img"
+              aria-label="Purelane organic dishwash liquid gel"
+            ></span>
+          </div>
+
+
+          <!-- METAL -->
+          <div class="pl-range-product" role="listitem">
+            <span
+              class="pl-range-bottle pl-metal"
+              role="img"
+              aria-label="Purelane copper bronze and brass cleaner"
+            ></span>
+          </div>
+
+
+          <!-- WASHING MACHINE -->
+          <div class="pl-range-product" role="listitem">
+            <span
+              class="pl-range-bottle pl-wm"
+              role="img"
+              aria-label="Purelane washing machine cleaner and descaler"
+            ></span>
+          </div>
+
+
+          <!-- HANDWASH -->
+          <div class="pl-range-product" role="listitem">
+            <span
+              class="pl-range-bottle pl-handwash"
+              role="img"
+              aria-label="Purelane gentle hydrating liquid handwash"
+            ></span>
+          </div>
+
+
+          <!-- MAGIC ERASER -->
+          <div class="pl-range-product" role="listitem">
+            <span
+              class="pl-range-bottle pl-eraser"
+              role="img"
+              aria-label="Purelane magic eraser"
+            ></span>
+          </div>
+
+
+          <!-- ORANGE END BLOCK -->
           <div
-            class="pl-range-row"
-            role="list"
-            aria-label="{{ section.settings.heading | escape }}"
+            class="pl-range-end-card"
+            role="img"
+            aria-label="More Purelane products"
           >
-
-            {% for block in section.blocks %}
-
-              <div
-                class="pl-range-product"
-                role="listitem"
-                {{ block.shopify_attributes }}
-              >
-
-                {% if block.settings.link != blank %}
-                  <a
-                    href="{{ block.settings.link }}"
-                    class="pl-range-product-link"
-                    aria-label="{{ block.settings.alt | default: block.settings.title | escape }}"
-                  >
-                {% endif %}
-
-                {% if block.settings.image != blank %}
-
-                  {{
-                    block.settings.image
-                    | image_url: width: 500
-                    | image_tag:
-                      loading: 'lazy',
-                      widths: '180, 250, 350, 500',
-                      sizes: '(max-width: 760px) 120px, 150px',
-                      class: 'pl-range-product-image',
-                      alt: block.settings.alt | default: block.settings.title
-                  }}
-
-                {% else %}
-
-                  <div class="pl-range-placeholder">
-                    <span>Product image</span>
-                  </div>
-
-                {% endif %}
-
-                {% if block.settings.title != blank %}
-                  <span class="pl-range-product-title">
-                    {{ block.settings.title }}
-                  </span>
-                {% endif %}
-
-                {% if block.settings.link != blank %}
-                  </a>
-                {% endif %}
-
-              </div>
-
-            {% endfor %}
-
+            <span></span>
+            <span></span>
           </div>
 
         </div>
 
+      </div>
+
+
+      <!-- ================= MOBILE HINT ================= -->
+
+      {% if section.settings.swipe_text != blank %}
         <p class="pl-range-hint">
           {{ section.settings.swipe_text }}
         </p>
-
       {% endif %}
 
     </div>
 
   </div>
+
 </section>
 
 
@@ -116,127 +185,42 @@
   "name": "Purelane Full Range",
   "tag": "section",
   "class": "purelane-full-range",
+
   "settings": [
+
     {
       "type": "text",
       "id": "kicker",
       "label": "Kicker",
       "default": "The full range"
     },
+
     {
       "type": "text",
       "id": "heading",
       "label": "Heading",
       "default": "Every room, one shelf"
     },
+
     {
       "type": "textarea",
       "id": "description",
       "label": "Description",
       "default": "Floors, taps, kitchen, laundry, bathroom and hands. Fourteen plant-based formulas that replace every harsh bottle under your sink."
     },
+
     {
       "type": "text",
       "id": "swipe_text",
       "label": "Mobile swipe text",
       "default": "Swipe to see the full shelf"
     }
+
   ],
-  "blocks": [
-    {
-      "type": "product",
-      "name": "Product",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Product image"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Product name",
-          "default": "Product"
-        },
-        {
-          "type": "text",
-          "id": "alt",
-          "label": "Image alt text"
-        },
-        {
-          "type": "url",
-          "id": "link",
-          "label": "Product link"
-        }
-      ]
-    }
-  ],
-  "max_blocks": 14,
+
   "presets": [
     {
-      "name": "Purelane Full Range",
-      "blocks": [
-        {
-          "type": "product",
-          "settings": {
-            "title": "Floor cleaner"
-          }
-        },
-        {
-          "type": "product",
-          "settings": {
-            "title": "Tap & limescale"
-          }
-        },
-        {
-          "type": "product",
-          "settings": {
-            "title": "Kitchen cleaner"
-          }
-        },
-        {
-          "type": "product",
-          "settings": {
-            "title": "Toilet cleaner"
-          }
-        },
-        {
-          "type": "product",
-          "settings": {
-            "title": "Laundry detergent"
-          }
-        },
-        {
-          "type": "product",
-          "settings": {
-            "title": "Dishwash gel"
-          }
-        },
-        {
-          "type": "product",
-          "settings": {
-            "title": "Metal cleaner"
-          }
-        },
-        {
-          "type": "product",
-          "settings": {
-            "title": "Washing machine cleaner"
-          }
-        },
-        {
-          "type": "product",
-          "settings": {
-            "title": "Handwash"
-          }
-        },
-        {
-          "type": "product",
-          "settings": {
-            "title": "Magic eraser"
-          }
-        }
-      ]
+      "name": "Purelane Full Range"
     }
   ]
 }
