@@ -19,32 +19,47 @@
   padding: clamp(175px, 27vh, 250px) 0 40px;
   box-sizing: border-box;
 
-  background: #eef9f1;
+  /*
+     IMPORTANT: do not paint a background here.
+     purelane-shared.css already forces every top-level
+     <section> transparent (`main section{background:
+     transparent !important}`) so the fixed, crossfading
+     .scenes layer shows through continuously across the
+     whole page. Setting a literal color on .pl-hero (even
+     one that gets overridden today) invites regressions if
+     that shared rule's specificity/load order ever changes,
+     and a Dawn color-scheme class landing on this element
+     can still paint its own background — so we say it
+     explicitly, with !important, rather than relying on
+     inheritance from elsewhere.
+  */
+  background: transparent !important;
   color: #17122f;
 }
 
 
 /* =========================================================
-   BACKGROUND
+   BACKGROUND ACCENT LAYER
+   This is intentionally NOT a base color. Its only job is to
+   add soft light/atmosphere on top of the shared .scenes
+   background so the hero still feels like "its own moment"
+   without breaking the continuous background the rest of the
+   page relies on. Do not add an opaque or near-opaque
+   background-color/gradient to this element — that's what
+   caused the hero to visually disconnect from every section
+   below it.
    ========================================================= */
 
 .pl-hero__scene {
   position: absolute;
   inset: 0;
   z-index: 0;
-
-  background:
-    radial-gradient(
-      ellipse at 72% 45%,
-      rgba(205, 239, 216, 0.95) 0%,
-      rgba(224, 246, 229, 0.82) 35%,
-      rgba(242, 250, 244, 0.96) 68%,
-      #fbfdfb 100%
-    );
+  pointer-events: none;
 }
 
 
-/* Soft flowing green light */
+/* Soft flowing green light (subtle accent only — low-opacity,
+   does not obscure the shared background underneath) */
 
 .pl-hero__scene::before {
   content: "";

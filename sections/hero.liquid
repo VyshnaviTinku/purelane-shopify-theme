@@ -15,17 +15,6 @@
 
   <div class="pl-wrap pl-hero__grid">
 
-    {%- if badges.size > 0 -%}
-      <div class="pl-hero__badges pl-glass-2" aria-label="Product promises">
-        {%- for block in badges -%}
-          <div class="pl-badge" {{ block.shopify_attributes }}>
-            <span class="pl-badge__icon">{%- render 'pl-icon', icon: block.settings.icon -%}</span>
-            <span>{{ block.settings.label }}</span>
-          </div>
-        {%- endfor -%}
-      </div>
-    {%- endif -%}
-
     <div class="pl-hero__copy">
       <h1 class="pl-d1 pl-rv pl-in">
         {{ section.settings.heading_line_1 }}<br>
@@ -69,6 +58,21 @@
 
     {%- if slides.size > 0 -%}
       <div class="pl-hero__stage-wrap" id="hero-stage-{{ section.id }}">
+
+        {%- comment -%} Moved inside stage-wrap: .pl-hero__badges positions
+        itself absolutely relative to THIS element (per the CSS comment's
+        intent), so it must be a descendant of it, not a sibling. {%- endcomment -%}
+        {%- if badges.size > 0 -%}
+          <div class="pl-hero__badges pl-glass-2" aria-label="Product promises">
+            {%- for block in badges -%}
+              <div class="pl-badge" {{ block.shopify_attributes }}>
+                <span class="pl-badge__icon">{%- render 'pl-icon', icon: block.settings.icon -%}</span>
+                <span>{{ block.settings.label }}</span>
+              </div>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+
         <div class="pl-hstage" data-hero-stage>
           {%- for block in slides -%}
             {%- liquid
