@@ -11,6 +11,62 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "bundle_categories_ViVfd7": {
+      "type": "bundle-categories",
+      "blocks": {
+        "category_VzmDpT": {
+          "type": "category",
+          "settings": {
+            "image_alt": "",
+            "title": "Kitchen bundle",
+            "description": "Grease, dishes & more",
+            "link_text": "Shop bundle",
+            "link": ""
+          }
+        },
+        "category_x7UPFw": {
+          "type": "category",
+          "settings": {
+            "image_alt": "",
+            "title": "Bathroom bundle",
+            "description": "Deep clean & disinfect",
+            "link_text": "Shop bundle",
+            "link": ""
+          }
+        },
+        "category_EbMRaQ": {
+          "type": "category",
+          "settings": {
+            "image_alt": "",
+            "title": "Laundry bundle",
+            "description": "Softer, fresher wash",
+            "link_text": "Shop bundle",
+            "link": ""
+          }
+        },
+        "category_RHWTqa": {
+          "type": "category",
+          "settings": {
+            "image_alt": "",
+            "title": "Hard water bundle",
+            "description": "Melt away limescale",
+            "link_text": "Shop bundle",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "category_VzmDpT",
+        "category_x7UPFw",
+        "category_EbMRaQ",
+        "category_RHWTqa"
+      ],
+      "name": "Bundle Categories",
+      "settings": {
+        "kicker": "Bundle categories",
+        "heading": "Find the right bundle for you"
+      }
+    },
     "purelane_club_mmG64F": {
       "type": "purelane-club",
       "name": "Purelane Club",
@@ -147,6 +203,7 @@
     }
   },
   "order": [
+    "bundle_categories_ViVfd7",
     "purelane_club_mmG64F",
     "purelane_footer_NmtBph",
     "footer"

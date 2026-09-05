@@ -1,0 +1,215 @@
+{{ 'bundle-categories.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="bundle-categories-{{ section.id }}"
+  class="pl-bundle-categories"
+>
+  <div class="pl-bundle-wrap">
+
+    <div class="pl-bundle-head">
+
+      {% if section.settings.kicker != blank %}
+        <span class="pl-kicker">
+          {{ section.settings.kicker }}
+        </span>
+      {% endif %}
+
+      {% if section.settings.heading != blank %}
+        <h2 class="pl-bundle-title">
+          {{ section.settings.heading }}
+        </h2>
+      {% endif %}
+
+    </div>
+
+
+    {% if section.blocks.size > 0 %}
+
+      <div class="pl-bundle-grid">
+
+        {% for block in section.blocks %}
+
+          {% assign block_link = block.settings.link %}
+
+          {% if block_link != blank %}
+            <a
+              href="{{ block_link }}"
+              class="pl-bundle-card"
+              {{ block.shopify_attributes }}
+            >
+          {% else %}
+            <div
+              class="pl-bundle-card"
+              {{ block.shopify_attributes }}
+            >
+          {% endif %}
+
+
+            <div class="pl-bundle-image">
+
+              {% if block.settings.image != blank %}
+
+                {{
+                  block.settings.image
+                  | image_url: width: 700
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '300, 450, 600, 700',
+                    sizes: '(max-width: 899px) 50vw, 25vw',
+                    class: 'pl-bundle-product-image',
+                    alt: block.settings.image_alt | default: block.settings.title
+                }}
+
+              {% else %}
+
+                <div class="pl-bundle-placeholder">
+                  <span>Product image</span>
+                </div>
+
+              {% endif %}
+
+            </div>
+
+
+            <div class="pl-bundle-content">
+
+              {% if block.settings.title != blank %}
+                <h3 class="pl-bundle-card-title">
+                  {{ block.settings.title }}
+                </h3>
+              {% endif %}
+
+              {% if block.settings.description != blank %}
+                <p class="pl-bundle-card-description">
+                  {{ block.settings.description }}
+                </p>
+              {% endif %}
+
+              {% if block.settings.link_text != blank and block_link != blank %}
+                <span class="pl-bundle-arrow">
+                  {{ block.settings.link_text }}
+                  <span aria-hidden="true">→</span>
+                </span>
+              {% endif %}
+
+            </div>
+
+
+          {% if block_link != blank %}
+            </a>
+          {% else %}
+            </div>
+          {% endif %}
+
+        {% endfor %}
+
+      </div>
+
+    {% endif %}
+
+  </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Bundle Categories",
+  "tag": "section",
+  "class": "purelane-bundle-categories",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker",
+      "default": "Bundle categories"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Find the right bundle for you"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Bundle category",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Product image"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image alt text"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Kitchen bundle"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Grease, dishes & more"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link text",
+          "default": "Shop bundle"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Bundle Categories",
+      "blocks": [
+        {
+          "type": "category",
+          "settings": {
+            "title": "Kitchen bundle",
+            "description": "Grease, dishes & more",
+            "link_text": "Shop bundle"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "title": "Bathroom bundle",
+            "description": "Deep clean & disinfect",
+            "link_text": "Shop bundle"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "title": "Laundry bundle",
+            "description": "Softer, fresher wash",
+            "link_text": "Shop bundle"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "title": "Hard water bundle",
+            "description": "Melt away limescale",
+            "link_text": "Shop bundle"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
