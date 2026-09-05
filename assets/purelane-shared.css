@@ -7,18 +7,19 @@
    baked in as literal hex, per section below.
    ===================================================================== */
 :root{
-  --pl-ink:#17102b;
+  --pl-ink:#f4f0fb;
   --pl-brand:#4b3a8f;
-  --pl-paper:#ece6f7;
-  --pl-paper-2:rgba(236,230,247,.74);
-  --pl-paper-3:rgba(236,230,247,.52);
-  --pl-accent:#f0a03c;
+  --pl-brand-lt:#6b55b8;
+  --pl-paper:#241a3d;
+  --pl-paper-2:rgba(36,26,61,.78);
+  --pl-paper-3:rgba(36,26,61,.56);
+  --pl-accent:#b8701c;
   --pl-accent-2:#c9761d;
-  --pl-surface:#faf7fd;
-  --pl-g-bg:linear-gradient(158deg,rgba(236,230,247,.15),rgba(75,58,143,.20) 58%,rgba(23,16,43,.28));
-  --pl-g-line:rgba(236,230,247,.22);
-  --pl-g-shadow:0 26px 74px rgba(18,12,34,.44);
-  --pl-g-inset:inset 0 1px 0 rgba(255,255,255,.24);
+  --pl-surface:#17102b;
+  --pl-g-bg:linear-gradient(158deg,rgba(255,255,255,.80),rgba(236,230,247,.56) 58%,rgba(222,212,240,.50));
+  --pl-g-line:rgba(75,58,143,.16);
+  --pl-g-shadow:0 22px 54px rgba(58,44,112,.13);
+  --pl-g-inset:inset 0 1px 0 rgba(255,255,255,.92);
   --pl-r:26px;
   --pl-ease:cubic-bezier(.2,.7,.2,1);
 }
@@ -108,10 +109,14 @@
 .s3{background:linear-gradient(178deg,#f0fbf2 0%,#d9f2df 28%,#bde6c8 60%,#a2d9b6 100%)}
 .s4{background:linear-gradient(178deg,#e9f8ec 0%,#cdedd6 30%,#addcbe 62%,#8ecdaa 100%)}
 
-/* Content sections must sit above the fixed scenes layer and stay
-   transparent, or the crossfading gradient never shows through.
-   Swap these selectors for your actual section wrapper classes. */
-.pl-hero, .pl-shop, .pl-combos, .pl-bundles, .pl-reviews {
+/* Every section/footer on the page must sit above the fixed scenes
+   layer and stay transparent, or the crossfading gradient never shows
+   through. Targets any section/footer inside <main>, no class-name
+   guessing required. */
+main section,
+main footer,
+#MainContent > section,
+#MainContent > footer {
   position: relative;
   z-index: 1;
   background: transparent !important;
