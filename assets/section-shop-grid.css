@@ -7,7 +7,7 @@
 .pl-card__media-link{display:block}
 .pl-card__shot{height:150px;border-radius:14px;margin-bottom:14px;display:grid;place-items:center;position:relative;overflow:hidden;
   background:linear-gradient(160deg,rgba(236,230,247,.12),rgba(75,58,143,.2));border:1px solid rgba(236,230,247,.14)}
-.pl-card__img{max-height:100%;max-width:100%;width:auto;height:auto;object-fit:contain}
+.pl-card__img{height:120px;width:auto;max-width:92%;object-fit:contain}
 .pl-card__img--placeholder{width:70%;height:70%;opacity:.55}
 
 .pl-card__pill{position:absolute;top:9px;left:9px;font-size:8.5px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
@@ -20,7 +20,10 @@
      with genuinely long product names; clamp to 2 lines instead of
      letting the card grow unpredictably or truncate mid-word */
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.pl-card__title a{text-decoration:none}
+/* Anchor tags get a browser-default blue link color that overrides
+   inherited color unless set explicitly here — this was the cause of
+   the blue titles instead of the intended dark navy. */
+.pl-card__title a{text-decoration:none;color:inherit}
 .pl-card__title a:hover{text-decoration:underline}
 
 .pl-card__rate{font-size:11.5px;color:var(--pl-paper-2);margin-bottom:10px;display:flex;align-items:center;gap:5px}
@@ -40,5 +43,6 @@
 
 @media (max-width:760px){
   .pl-card__shot{height:126px}
+  .pl-card__img{height:100px}
   .pl-shelf{gap:10px}
 }
